@@ -1,0 +1,35 @@
+Červení money 100069.0
+Červení horse false false 200$
+Červení tank false false 200$
+Červení rig false false 200$
+Červení silo false false 200$
+Červení search false false 200$
+Červení pipe true false 300$
+Oranžoví money 100674.0
+Oranžoví horse false false 200$
+Oranžoví tank false false 200$
+Oranžoví rig false false 200$
+Oranžoví silo false false 200$
+Oranžoví search false false 200$
+Oranžoví pipe false false 200$
+Žlutí money 100674.0
+Žlutí horse false false 200$
+Žlutí tank false false 200$
+Žlutí rig false false 200$
+Žlutí silo false false 200$
+Žlutí search false false 200$
+Žlutí pipe false false 200$
+Zelení money 100674.0
+Zelení horse false false 200$
+Zelení tank false false 200$
+Zelení rig false false 200$
+Zelení silo false false 200$
+Zelení search false false 200$
+Zelení pipe false false 200$
+Modří money 100674.0
+Modří horse false false 200$
+Modří tank false false 200$
+Modří rig false false 200$
+Modří silo false false 200$
+Modří search false false 200$
+Modří pipe false false 200$
