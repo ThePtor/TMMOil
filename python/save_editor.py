@@ -1,5 +1,7 @@
 #import os
-soubor = open("save.txt", "r", encoding="UTF-8")
+
+data_path = "C:/Users/agon1/Desktop/TMMOil/data/save.txt"
+soubor = open(data_path, "r", encoding="UTF-8")
 stats = soubor.readlines()
 soubor.close()
 
@@ -19,10 +21,13 @@ for x in stats:
             print(f"{x[0]} nemají na pozemek. Zadejte novou hodnotu.")
             sub = float(input(f"{x[0]} mají {x[2]}$. Kolik utratili za pozemek?\n"))
 
-        x[2] = round(x[2]-sub, 2)
+        x[2] = str(round(x[2]-sub, 2))
 
-for line in stats:
-    print(*line, file="save.txt")
+
+with open(data_path, "w", encoding = "UTF-8") as file:
+    for line in stats:
+        file.write(' '.join(line))
+        file.write('\n')
 
 
 #try:os.remove("save.txt")
