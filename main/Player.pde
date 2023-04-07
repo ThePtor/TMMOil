@@ -358,49 +358,49 @@ minedMoney = 0;
 
   void loadImages() {
 
-    stopWatch = loadImage("256px/256px-town.png");
-    stopWatchBack = loadImage("256px/256px-rigs.png");
+    stopWatch = loadImage(dataPath + "256px/256px-town.png");
+    stopWatchBack = loadImage(dataPath + "256px/256px-rigs.png");
 
     if (horse2) {
-      horseImage = loadImage("256px/256px-horse-2.png");
+      horseImage = loadImage(dataPath + "256px/256px-horse-2.png");
     } else if (horse) {
-      horseImage = loadImage("256px/256px-horse-1.png");
+      horseImage = loadImage(dataPath + "256px/256px-horse-1.png");
     } else {
-      horseImage = loadImage("256px/256px-horse-0.png");
+      horseImage = loadImage(dataPath + "256px/256px-horse-0.png");
     }
 
     if (silo2) {
-      siloImage = loadImage("320px/320px-silo-2.png");
+      siloImage = loadImage(dataPath + "320px/320px-silo-2.png");
     } else if (silo) {
-      siloImage = loadImage("320px/320px-silo-1.png");
+      siloImage = loadImage(dataPath + "320px/320px-silo-1.png");
     } else {
-      siloImage = loadImage("320px/320px-silo-0.png");
+      siloImage = loadImage(dataPath + "320px/320px-silo-0.png");
     }
 
 
     if (rig2) {
-      rigImage = loadImage("320px/320px-rig-2.png");
+      rigImage = loadImage(dataPath + "320px/320px-rig-2.png");
     } else if (rig) {
-      rigImage = loadImage("320px/320px-rig-1.png");
+      rigImage = loadImage(dataPath + "320px/320px-rig-1.png");
     } else {
-      rigImage = loadImage("320px/320px-rig-0.png");
+      rigImage = loadImage(dataPath + "320px/320px-rig-0.png");
     }
 
 
     if (tank2) {
-      tankImage = loadImage("256px/256px-wagon-2.png");
+      tankImage = loadImage(dataPath + "256px/256px-wagon-2.png");
     } else if (tank) {
-      tankImage = loadImage("256px/256px-wagon-1.png");
+      tankImage = loadImage(dataPath + "256px/256px-wagon-1.png");
     } else {
-      tankImage = loadImage("256px/256px-wagon-0.png");
+      tankImage = loadImage(dataPath + "256px/256px-wagon-0.png");
     }
 
     if (pipe2) {
-      pipeImage = loadImage("320px/320px-connection-2.png");
+      pipeImage = loadImage(dataPath + "320px/320px-connection-2.png");
     } else if (pipe) {
-      pipeImage = loadImage("320px/320px-connection-1.png");
+      pipeImage = loadImage(dataPath + "320px/320px-connection-1.png");
     } else {
-      pipeImage = loadImage("320px/320px-connection-1.png");
+      pipeImage = loadImage(dataPath + "320px/320px-connection-1.png");
     }
   }
 
@@ -501,7 +501,7 @@ fill(0);
 
 
   void sell(float price) {
-
+price = abs(price);
     if (sellCooldown == cooldownHalfTime) {
       if(sellBuffer>0) {
       sold = true;

@@ -3,7 +3,6 @@ soubor = open("save.txt", "r", encoding="UTF-8")
 stats = soubor.readlines()
 soubor.close()
 
-tmpout = open("save.txt", "w", encoding="UTF-8")
 
 
 for x in range(len(stats)):
@@ -23,9 +22,8 @@ for x in stats:
         x[2] = round(x[2]-sub, 2)
 
 for line in stats:
-    print(*line, file=tmpout)
+    print(*line, file="save.txt")
 
-tmpout.close()
 
 #try:os.remove("save.txt")
 #except: pass

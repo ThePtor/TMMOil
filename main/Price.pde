@@ -55,13 +55,12 @@ void oilPrice(int priceFunction) {
     lastPrice = priceDelta;
     oilPrice += priceDelta;
 
-    oilPrice = abs(round2(oilPrice));
   }
 
   fill(0);
   textAlign(CENTER, CENTER);
   textSize(250);
-  text(oilPrice + "$", width/2, 184);
+  text(abs(oilPrice) + "$", width/2, 184);
   textSize(100);
   textAlign(RIGHT, CENTER);
   imageMode(CENTER);

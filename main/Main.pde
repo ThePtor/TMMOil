@@ -5,6 +5,7 @@ Serial myPort;
 byte cVal;
 boolean changedState;
 Player[] Players = new Player[5];
+
 PFont font;
 PImage miningBackground, upgradeBackground, up, down;
 float oilPrice;
@@ -12,7 +13,7 @@ IntList list = new IntList();
 int lastTime, lastTimeSold;
 float lastPrice;
 float soldBuffer;
-float sellInfluence = 0.5;
+float sellInfluence = 3;
 boolean[] playerSold = new boolean[5];
 float tempDelta;
 int sign = 1;
