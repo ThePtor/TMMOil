@@ -23,6 +23,10 @@ for x in stats:
 
         x[2] = str(round(x[2]-sub, 2))
 
+    if x[1] == "searchBonus":
+        bonus = int(input(f"Kolik vyřešili {x[0]} příkladů?\n"))
+        x[2] = str(bonus)
+
 
 with open(data_path, "w", encoding = "UTF-8") as file:
     for line in stats:
