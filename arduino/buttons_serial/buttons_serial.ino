@@ -32,9 +32,5 @@ output += (byt[i] * (power));
 }
 Serial.println(char(output));
 
-  //Serial.println(output);
-//Serial.println(digitalRead(sensorPin));
-//message to the receiving device
-
 delay(100);
 }
