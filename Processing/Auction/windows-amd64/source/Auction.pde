@@ -5,6 +5,7 @@ Serial myPort;
 byte cVal;
 boolean changedState;
 Player[] Players = new Player[5];
+ color winnerColor = color(0);
 
 String dataPath= "C:/Users/agon1/Desktop/TMMOil/data/";
 
@@ -32,7 +33,7 @@ boolean won= false;
 float X =0;
 
 
-
+int year;
 
 void setup() {
 
@@ -61,6 +62,7 @@ void setup() {
 
     lines[i] = split(inputLines[i], ' ');
   }
+ year = int(lines[0][1]);
   Players[0] = new Player("Červení", 0, list.get(0));
   Players[1] = new Player("Oranžoví", 375, list.get(1));
   Players[2] = new Player("Žlutí", 2*375, list.get(2));
@@ -72,7 +74,7 @@ void setup() {
     Players[i].initializeStats();
     Players[i].loadImages();
   }
-
+initEstate();
 }
 
 
@@ -85,7 +87,9 @@ setButtons();
 }
 
 void keyPressed () {
+finishEstate();  
 }
+
 void keyReleased() {
 }
 

@@ -1,5 +1,6 @@
 void savePlayers() {
   PrintWriter output = createWriter(dataPath + "save.txt");
+  output.println("year"  + " " + year);
   for (int i = 0; i < Players.length; i ++) {
 
 
@@ -10,7 +11,11 @@ void savePlayers() {
     output.println(Players[i].name + " " + "silo"+ " " + Players[i].silo + " " + Players[i].silo2+ " " + Players[i].siloPrice);
     output.println(Players[i].name + " " + "search"+ " " + Players[i].search + " " + Players[i].search2+ " " + Players[i].searchPrice);
     output.println(Players[i].name + " " + "pipe"+ " " + Players[i].pipe + " " + Players[i].pipe2+ " " + Players[i].pipePrice);
+    output.println(Players[i].name + " " + "searchBonus"+ " " + Players[i].searchBonus);
+    output.println(Players[i].name + " " + "onColor"+ " " + Players[i].onR + " " + Players[i].onG + " " + Players[i].onB);
+    output.println(Players[i].name + " " + "offColor"+ " " + Players[i].offR + " " + Players[i].offG + " " + Players[i].offB);
   }
+  
   output.flush();
   output.close();
 }

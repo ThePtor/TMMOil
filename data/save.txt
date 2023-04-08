@@ -1,5 +1,5 @@
 year 2
-Červení money 2810.0
+Červení money 21.0
 Červení horse false false 200$
 Červení tank false false 200$
 Červení rig false false 200$
@@ -9,7 +9,7 @@ year 2
 Červení searchBonus 0
 Červení onColor 204 9 47
 Červení offColor 253 177 192
-Oranžoví money 3405.0
+Oranžoví money 24.0
 Oranžoví horse false false 200$
 Oranžoví tank false false 200$
 Oranžoví rig false false 200$
@@ -19,7 +19,7 @@ Oranžoví pipe false false 200$
 Oranžoví searchBonus 0
 Oranžoví onColor 255 100 24
 Oranžoví offColor 253 198 137
-Žlutí money 1060.0
+Žlutí money 1780.0
 Žlutí horse true true MAX
 Žlutí tank false false 200$
 Žlutí rig false false 200$
@@ -29,7 +29,7 @@ Oranžoví offColor 253 198 137
 Žlutí searchBonus 0
 Žlutí onColor 252 225 34
 Žlutí offColor 255 247 153
-Zelení money 2840.0
+Zelení money 3380.0
 Zelení horse true false 300$
 Zelení tank false false 200$
 Zelení rig false false 200$
@@ -39,7 +39,7 @@ Zelení pipe false false 200$
 Zelení searchBonus 0
 Zelení onColor 46 177 53
 Zelení offColor 196 223 155
-Modří money 8192.0
+Modří money 50.0
 Modří horse true true MAX
 Modří tank true true MAX
 Modří rig true true MAX

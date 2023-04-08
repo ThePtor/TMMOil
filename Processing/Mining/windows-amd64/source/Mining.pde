@@ -69,6 +69,7 @@ void setup() {
     lines[i] = split(inputLines[i], ' ');
   }
   year = int(lines[0][1]);
+  if(year>9) year = 0;
   Players[0] = new Player("Červení", 0, list.get(0));
   Players[1] = new Player("Oranžoví", 375, list.get(1));
   Players[2] = new Player("Žlutí", 2*375, list.get(2));
