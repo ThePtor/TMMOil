@@ -2,33 +2,40 @@ void estate() {
   background(255);
   textSize(200);
   fill(0);
-  
-
 if (!won){
     
 
 for(int i = 0; i < 5; i++) {
   setButtons();
-  if(Players[i].buttonPressed){
+  if((Players[i].buttonPressed) && (Players[i].money >= landPrice)){
   winner = Players[i].name;
+  winnerColor = Players[i].onColor;
   won = true;
   break;
   }
 }
-
-
-    text(landPrice +" "+  winner, width/2, height/2);
+    text(int(landPrice), width/2, height/2);
    //text(int(Players[0].buttonPressed), width/2, height/2);
+if(landPrice>0)
+  landPrice -= 2;
 
-  landPrice -= 1000;
+for(int i = 0; i < 5; i ++) {
+
+drawPlayer(i);
+
+}
+
+
 
 }
 
 else {
-
-  text(winner + landPrice, width/2, height/2);
-
-
+  fill(winnerColor);
+  textSize(200);
+  text(winner, width/2, height/2-200);
+  fill(0);
+  text("Získávají akcii za ", width/2, height/2);
+  text(landPrice + " $", width/2, height/2+200);
 }
 
 }
@@ -45,8 +52,6 @@ won = false;
 }
 
 landPrice = (int(landPrice / 1000)*1000) + 1000;
-
-landPrice = 150000;
 winner = "";
 
 
@@ -57,8 +62,27 @@ for(int i = 0; i < 5; i++) {
 if (Players[i].name.equals(winner))
 Players[i].money -= landPrice;
 savePlayers();
+exit();
 }
 
 
+
+}
+
+void drawPlayer(int index) {
+  if(Players[index].money >= landPrice)
+  fill(Players[index].onColor);
+  else
+  fill(Players[index].offColor);
+  textSize(120);
+  textAlign(CENTER, CENTER);
+  text( Players[index].name,index*(width/5) + width/10, 200);
+  
+  fill(0);
+  textSize(80);
+  text( Players[index].money + " $",index*(width/5) + width/10, 300);
+ 
+
+  
 
 }

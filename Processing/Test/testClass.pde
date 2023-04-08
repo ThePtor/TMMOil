@@ -2,29 +2,29 @@ void test() {
  strokeWeight(10);
  
  
-stroke(204,9,47);
-if(Players[0].buttonPressed) fill(204,9,47);
-else fill(253,177,192);
+stroke(Players[0].onColor);
+if(Players[0].buttonPressed) fill(Players[0].onColor);
+else fill(Players[0].offColor);
 rect(5,5,width/5-10, height-5);
 
-stroke(255,100,24);
-if(Players[1].buttonPressed) fill(255,100,24);
-else fill(253,198,137);
+stroke(Players[1].onColor);
+if(Players[0].buttonPressed) fill(Players[1].onColor);
+else fill(Players[1].offColor);
 rect(width/5 + 5,5,width/5-10, height-10);
 
-stroke(252,225,34);
-if(Players[2].buttonPressed) fill(252,225,34);
-else fill(255,247,153);
+stroke(Players[2].onColor);
+if(Players[0].buttonPressed) fill(Players[2].onColor);
+else fill(Players[2].offColor);
 rect(2*(width/5) + 5,5,width/5-10, height-10);
 
-stroke(46,177,53);
-if(Players[3].buttonPressed) fill(46,177,53);
-else fill(196,223,155);
+stroke(Players[3].onColor);
+if(Players[0].buttonPressed) fill(Players[3].onColor);
+else fill(Players[3].offColor);
 rect(3*(width/5) + 5,5,width/5-10, height-10);
 
-stroke(0,57,166);
-if(Players[4].buttonPressed) fill(0,57,166);
-else fill(141,201,232);
+stroke(Players[4].onColor);
+if(Players[4].buttonPressed) fill(Players[4].onColor);
+else fill(Players[4].offColor);
 rect(4*(width/5) + 5,5,width/5-10, height-10);
 
 strokeWeight(1);
