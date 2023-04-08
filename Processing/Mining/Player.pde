@@ -12,6 +12,7 @@ class Player {
   int offR, offG, offB;
   
   int searchBonus;
+  int landQuality;
 
   boolean sold = false;
   int soldHold;
@@ -77,6 +78,11 @@ class Player {
          if (Lines[i][1].equals("searchBonus")) {
           searchBonus = int(Lines[i][2]);
         }
+        
+        if (Lines[i][1].equals("landQuality")) {
+          landQuality = int(Lines[i][2]);
+        }
+        
          if (Lines[i][1].equals("onColor")) {
            onR = int(Lines[i][2]);
            onG = int(Lines[i][3]);

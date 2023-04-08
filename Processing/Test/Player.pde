@@ -12,6 +12,7 @@ class Player {
   int offR, offG, offB;
   
   int searchBonus;
+  int landQuality;
 
   boolean sold = false;
   int soldHold;
@@ -36,6 +37,8 @@ class Player {
   boolean changedStat = false;
 
   PImage horseImage, rigImage, tankImage, siloImage, pipeImage, stopWatch, stopWatchBack;
+
+  boolean ready;
 
   int miningFunction;
   float miningBuffer;
@@ -75,6 +78,11 @@ class Player {
          if (Lines[i][1].equals("searchBonus")) {
           searchBonus = int(Lines[i][2]);
         }
+        
+        if (Lines[i][1].equals("landQuality")) {
+          landQuality = int(Lines[i][2]);
+        }
+        
          if (Lines[i][1].equals("onColor")) {
            onR = int(Lines[i][2]);
            onG = int(Lines[i][3]);
@@ -213,7 +221,26 @@ minedMoney = 0;
   //  output.close();
   //}
 
+void ready() {
+    fill(0);
+    textAlign(CENTER, CENTER);
+    textSize(100);
+    text(name, xOffset + 210, 100);
+
+    fill(0);
+    ellipseMode(CORNER);
+    textSize(100);
+    
+    
+    text("MŮŽEME", xOffset + 210, (height/2) -250);
+    text("ZAČÍT", xOffset + 210, (height/2) - 150);
+    textAlign(RIGHT, TOP);
+    textSize(40);
+
+}
+
   void upgrade() {
+    if(buttonPressed) ready = true;
     fill(0);
     textAlign(CENTER, CENTER);
     textSize(100);
