@@ -1,5 +1,5 @@
 # TMMoil
-Táborová hra na letní TMM 2023
+Táborová hra na jarní TMM 2023
 ## Jak to funguje
 Cíl hry je jednoduchý, mít co nejvíce bodů...
 
@@ -25,12 +25,12 @@ Budete hledat a těžit ropu. Pokud znáte hru Turmoil, pochopili jste 90 % mech
 V každém proběhne těchto pět kroků v tomto pořadí:
 1. **Nákup pozemku** - na začátku kola si na velké mapě koupíte pozemek, kde budete hledat. Týmy se mohou přehazovat, chtějí-li stejný pozemek.
 2. **Upgrady, vážení, upgrady!** - za vydělané peníze si můžete koupit upgrady, abyste získali výhodu oproti ostatním.
-3. **Dražba parcely (ve městě)** - Každé kolo se vydraží jedno (nebo více) z políček na malé mapě (těch za které dostáváte body). Vítěz každé jedné dražby může být jen jeden. Může se také vydražit ***žolík*** za který si lze vybrat libovolné z volných parcel ve městě.
-4. **Upgrady, vážení, upgrady!** - Ti co nevyhráli dražbu mohou zamáčknout slzu nákupem upgradů.
+3. **Dražba parcely (ve městě)** - Každé kolo se vydraží jedno (nebo více) z políček na malé mapě (těch za které dostáváte body). Vítěz každé jedné dražby může být jen jeden. Může se také vydražit ***žolík*** za který si lze vybrat libovolná z volných parcel ve městě.
+4. **Upgrady, vážení, upgrady!** - Ti co nevyhráli dražbu mohou zamáčknout slzu nákupem upgradů (i ti co vyhráli, pokud jim zbývají peníze).
 5. **Herní kolo** - dělí se na *hledací část* a *těžební část*.
 
 ## Nákup pozemku
-Náku pozemku probíhá zcela offline, tím způsobem, že si na velké mapě týmy vybírají, který chctějí koupit další pozemek pro hledání těžbu. Cena začíná na minimální hodnotě, a každým přehozením jiného týmu se zvýší cena o danou hodnotu.
+Nákup pozemku probíhá zcela offline, tím způsobem, že si na velké mapě týmy vybírají, který chtějí koupit další pozemek pro hledání a těžbu. Cena začíná na minimální hodnotě, a každým přehozením jiného týmu se zvýší cena o danou hodnotu.
 
 
 ## Upgrady, vážení, upgrady!
@@ -49,7 +49,7 @@ V hledací části polovina týmu hledá ropu na zakoupeném pozemku. Hledání 
 ### Těžební část
 V těžební části polovina týmu těží a prodává ropu z ložisek, která našli v hledací části. Stisknutím tlačítka vyšlete vůz s nejvyšším dostupným množstvím ropy z vašeho sila. Vozu trvá nějaký čás cesta do města (do prodeje) a zpátky. Ropa se prodá ve chvíli příjezdu vozu do města.
 
-Cena ropy se mění v čase pomocí matematické funkce. Prodej ropy dočasně sníží cenu ropy. Suma peněz za prodej ropy je určena ve chvíli, kdy dorarzí vagon s ropou do města. Vůz s ropu jede do města v závislosti na úrovni vylepšení koně. Na konci roku se prodá všechna ropa na cestě za cenu z posledního dne a všechna ropa v silu propadne.
+Cena ropy se mění v čase pomocí matematické funkce. Prodej ropy dočasně sníží cenu ropy. Suma peněz za prodej ropy je určena ve chvíli, kdy dorazí vagon s ropou do města. Vůz s ropu jede do města v závislosti na úrovni vylepšení koně. Na konci roku se prodá všechna ropa na cestě za cenu z posledního dne a všechna ropa v silu propadne.
 ## Aukce
 Hráči dostávají možnost získat v aukci jednu z parcel ve městě. Aukce probíhá formou holandské aukce, tedy cena se postupně snižuje do doby, než některý z týmů stiskne tlačítko. Cena za parcelu je cena na obrazovce ve chvíli stisknutí tlačítka.
 
