@@ -45,9 +45,9 @@ Upgrady lze koupit za peníze a poskytují výhody do herního kola.
 Jedno herní kolo trvá 1 herní rok (ten má stejně dnů jako reálný). Dělí se na hledací a těžební část. Každá polovina týmu hraje jinou část, mezi koly se poloviny střídají v herních částech. *(tzn. jedna polovina nejdříve odehraje hledací část a v následujícím kole hraje těžební část s tím, co v minulém kole vyhledala)* 
 
 ### Hledací část
-V hledací části polovina týmu hledá ropu na zakoupeném pozemku. Hledání probíhá řešením matematických úloh, vyhodnocení správnosti probíhá až na konci roku. Úloh dostanete tolik, jaká je kvalita zakoupeného pozemku **+2** za každý upgrade **hledání**. Počet správně vyřešených úloh (zásadně) ovlivňáuje kolik v těžební části vytěžíte ropy.
+V hledací části polovina týmu hledá ropu na zakoupeném pozemku. Hledání probíhá řešením matematických úloh, vyhodnocení správnosti probíhá až na konci roku. Úloh dostanete tolik, jaká je kvalita zakoupeného pozemku **+2** za každý upgrade **hledání**. Počet správně vyřešených úloh (zásadně) ovlivňuje kolik v těžební části vytěžíte ropy.
 ### Těžební část
-V těžební části polovina týmu těží a prodává ropu z ložisek, které našly v hledací části. Stisknutím tlačítka vyšlete vůz s nejvyšším dostupným množstvím ropy z vašeho sila. Vozu trvá nějaký čás cesta do města (do prodeje) a zpátky. Ropa se prodá ve chvíli příjezdu vozu do města.
+V těžební části polovina týmu těží a prodává ropu z ložisek, která našli v hledací části. Stisknutím tlačítka vyšlete vůz s nejvyšším dostupným množstvím ropy z vašeho sila. Vozu trvá nějaký čás cesta do města (do prodeje) a zpátky. Ropa se prodá ve chvíli příjezdu vozu do města.
 
 Cena ropy se mění v čase pomocí matematické funkce. Prodej ropy dočasně sníží cenu ropy. Suma peněz za prodej ropy je určena ve chvíli, kdy dorarzí vagon s ropou do města. Vůz s ropu jede do města v závislosti na úrovni vylepšení koně. Na konci roku se prodá všechna ropa na cestě za cenu z posledního dne a všechna ropa v silu propadne.
 ## Aukce
