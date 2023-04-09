@@ -224,6 +224,8 @@ void beginMining() {
 void endMining() {
   gameState = "final";
   for (int i = 0; i < 5; i++) {
+    
+    Players[i].minedMoney+=(Players[i].sellBuffer * oilPrice);
     Players[i].money += Players[i].minedMoney;
     //Players[i].initializeStats();
     Players[i].loadImages();
