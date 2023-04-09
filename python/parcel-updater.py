@@ -1,5 +1,5 @@
 data_teams = "C:/Users/pavel/Documents/python/tmm/save.txt" #abusolutní cesta k savu týmů
-data_tiles = "C:/Users/pavel/Documents/python/values-random.txt" #absolutní cesta k savu dílků
+data_tiles = "C:/Users/pavel/Documents/python/tiles-save.txt" #absolutní cesta k savu dílků
 color_values = "C:/Users/pavel/Documents/python/tmm/color-values.txt" #informace o barvách týmů
 
 baseprice = 1000 #Základní cena pozemku
