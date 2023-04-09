@@ -30,7 +30,7 @@ V každém proběhne těchto pět kroků v tomto pořadí:
 5. **Herní kolo** - dělí se na *hledací část* a *těžební část*.
 
 ## Nákup pozemku
-Nákup pozemku probíhá zcela offline, tím způsobem, že si na velké mapě týmy vybírají, který chtějí koupit další pozemek pro hledání a těžbu. Cena začíná na minimální hodnotě, a každým přehozením jiného týmu se zvýší cena o danou hodnotu.
+Nákup pozemku probíhá tak, že si tým řekne o jaký pozemek má zájem. Pořadí výběru je od týmu s nejméně penězi po nejbohatší tým. Tým který je právě na řadě má své jméno zvýrazněno svou barvou. Týmy si mohou zabrat pozemek jiného týmu, ale tím se zvýší cena, kterou je nutné zaplatit. Nákup končí ve chvíli, kdy má každý tý vybrané jedno pole, tedy pole nejde změnit, nepřeplatí-li vás jiný tým. Pokud nemáte dostatek peněz na přehození jiného týmu, nelze to udělat. Políčka zvýrazněná světlou barvou týmů jsou pozemky vybrané minulý rok, šedě jsou zvýrazněny již vytěžená pozemky. Čísla v polích odpovídají kvalitě pozemků. 
 
 
 ## Upgrady, vážení, upgrady!
