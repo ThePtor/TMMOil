@@ -2,8 +2,8 @@ data_teams = "C:/Users/pavel/Documents/python/tmm/save.txt" #abusolutní cesta k
 data_tiles = "C:/Users/pavel/Documents/python/values-random.txt" #absolutní cesta k savu dílků
 color_values = "C:/Users/pavel/Documents/python/tmm/color-values.txt" #informace o barvách týmů
 
-baseprice = 2896 #Základní cena pozemku
-baseincrease = 4205 #zvýšení ceny při přihození
+baseprice = 1000 #Základní cena pozemku
+baseincrease = 500 #zvýšení ceny při přihození
 
 
 from tkinter import *
@@ -255,6 +255,7 @@ with open(data_tiles, "r", encoding="UTF-8") as soubor:
 teams = create_teams(vstup)
 for team in teams:
     team.feed(vstup)
+    team.stats["money"] = max(team.stats["money"], baseprice)
 add_colors(teams, colors)
 tiles = create_tiles(dilky)
 teams.sort(key= lambda x: x.stats["money"])
@@ -285,24 +286,3 @@ with open(data_teams, "w", encoding="UTF-8") as soubor:
     for team in teams:
         team.spend_money()
         team.export(soubor)
-
-"""
-with open(data_tiles, "w", encoding="UTF-8") as soubor:
-    for tile in tiles:
-        tile.export(soubor)
-"""
-
-
-
-
-
-
-
-"""
-
-
-
-for i in range(100): #konfigurátor políček
-    pass
-okno.mainloop()
-"""
