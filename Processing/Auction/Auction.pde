@@ -9,6 +9,7 @@ Player[] Players = new Player[5];
 
 String dataPath= "C:/Users/agon1/Desktop/TMMOil/data/";
 
+boolean restart = false;
 
 PFont font;
 PImage miningBackground, upgradeBackground, up, down;
@@ -87,10 +88,12 @@ setButtons();
 }
 
 void keyPressed () {
-finishEstate();  
+if (key == '\n')
+finishEstate();
 }
 
 void keyReleased() {
+  restart = false;
 }
 
 
@@ -118,5 +121,5 @@ void setButtons() {
 
 float round2 (float num) {
 
-  return (round(num*100)/100);
+  return ((round(num*100)) * 0.01);
 }
