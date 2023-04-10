@@ -21,7 +21,7 @@ echo Press any key to start save editor...
 pause>nul
 cls
 cd python/
-python3 save_editor.py
+python3 parcel-updater.py
 cd ../
 
 cls
