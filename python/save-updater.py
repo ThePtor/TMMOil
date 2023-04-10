@@ -4,7 +4,7 @@ def main():
     data_path = "C:/Users/pavel/Desktop/savetest/"
     #save.txt
     #tiles.txt
-    #color-values.txt
+    #color-values.txt - optional
     baseprice = 1000 #Základní cena pozemku
     baseincrease = 499 #zvýšení ceny při přihození
 
