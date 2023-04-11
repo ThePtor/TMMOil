@@ -14,7 +14,7 @@ Cíl hry je jednoduchý, mít co nejvíce bodů...
 Budete hledat a těžit ropu. Pokud znáte hru Turmoil, pochopili jste 90 % mechanik v této hře. V týmu se rozdělte na mladší a starší. V jednom kole totiž budou současně probíhat dvě fáze hry.
 
 ## Čeho si povšimnout
-1. **Velká mapa** - Na flipchartu na dveřích vidíte mapu území, kde budete těžit ropu. Každé políčko má předem určenou kvalitu od 5 do 20. Políčka s podobnými hodnotami najdete blízko sebe.
+1. **Velká mapa** - Na flipchartu na dveřích vidíte mapu území, kde budete těžit ropu. Každé políčko má předem určenou kvalitu od 5 do 20. Políčka s podobnými hodnotami najdete blízko sebe. ***(TODO: Možná ne mapu na těžbu, ale jen mesto na dveře)***
 
 2.  **Malá mapa** - Ve středu velké mapy vidíte malá políčka, to jsou parcely ve městě, z nich se vypočítá vaše skóre v této hře.
 3.  **Obrazovka** - Kromě hledací fáze na ní bude probíhat celá hra.
