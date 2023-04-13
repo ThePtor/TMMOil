@@ -320,8 +320,8 @@ def main():
     
     okno.attributes("-fullscreen", True)
     okno.title("TMMoil pozemková aukce")
-    qu = Button(okno, text="Quit", image=im, width=120, command=okno.destroy, compound="c")
-    qu.grid(column=22, row=1) 
+    #qu = Button(okno, text="Quit", image=im, width=120, command=okno.destroy, compound="c")
+    #qu.grid(column=22, row=1) 
     lt_generate()
     num_generate()
     grid_generate()
