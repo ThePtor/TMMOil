@@ -108,7 +108,7 @@ changed = false;
 }
 
  public void saveMap() {
-PrintWriter output = createWriter("map.txt");
+PrintWriter output = createWriter("../data/map.txt");
 for (int i = 0; i < size; i ++){
 for (int j = 0; j < size; j ++){
   if(mask[j][i])
