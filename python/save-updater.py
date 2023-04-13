@@ -1,7 +1,7 @@
 from tkinter import *
 import random
 
-data_path = "C:/Users/pavel/Desktop/savetest/"
+data_path = "C:/Users/agon1/Desktop/TMMOil/data/"
 #save.txt
 #map.txt
 #color-values.txt - optional
