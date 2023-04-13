@@ -4,19 +4,22 @@ float x, y;
 boolean changed;
 int size = 10;
 int[][] map;
+boolean[][] mask;
+boolean move;
 
 void setup() {
   
 map = new int[size][size];
+mask = new boolean[size][size];
 background(255);
 size(800, 800, P2D);
 }
 void draw() {
-  
-
+    noiseDetail(int(y),0.2);
+if(move){
   y = map(height - mouseY,0, height, 0, 1);
-  noiseDetail(int(y),0.2);
   x = map(mouseX,0, width, 0, y);
+}
   background(255);
 for (int i = 0; i < size; i ++){
 for (int j = 0; j < size; j ++){
@@ -24,9 +27,11 @@ for (int j = 0; j < size; j ++){
 }}
 for (int i = 0; i < size; i ++){
 for (int j = 0; j < size; j ++){
+ 
   if((i+j) % 2 == 0) 
 fill(255);
 else fill(180);
+if (mask[i][j]) fill(20, 50, 200);
   rect(i*width/size,j*width/size,height/size,height/size);
   fill(0);
   textSize(height/(size * 2));
@@ -40,7 +45,8 @@ else fill(180);
 }}
 
 void mousePressed() {
-noiseSeed((long)random(99999));
+  if (!move)
+mask[int(map(mouseX, 0, width, 0, size))][int(map(mouseY, 0, height, 0, size))] = !mask[int(map(mouseX, 0, width, 0, size))][int(map(mouseY, 0, height, 0, size))];
 }
 
 void keyPressed () {
@@ -73,9 +79,10 @@ offsetY --;
 
 
 }}
-
-
-
+if (key == ' ')
+noiseSeed((long)random(99999));
+if (key == 'm')
+move = !move;
 }
 
 }
@@ -87,11 +94,13 @@ void saveMap() {
 PrintWriter output = createWriter("map.txt");
 for (int i = 0; i < size; i ++){
 for (int j = 0; j < size; j ++){
-  output.print(map[i][j]);
-  if(j < (size - 1))
-  output.print(' ');
+  if(mask[j][i])
+  output.print("-1");
+  else 
+  output.print(map[j][i]);
+  output.println();
 }
-output.println();
+
 
 
 }

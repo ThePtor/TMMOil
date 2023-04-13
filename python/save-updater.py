@@ -1,12 +1,12 @@
 from tkinter import *
 import random
 def main():
-    data_path = "C:/Users/pavel/Desktop/savetest/"
+    data_path = "C:/Users/agon1/Desktop/TMMOil/data/"
     #save.txt
     #tiles.txt
     #color-values.txt - optional
     baseprice = 1000 #Základní cena pozemku
-    baseincrease = 499 #zvýšení ceny při přihození
+    baseincrease = 500 #zvýšení ceny při přihození
 
     class Team:
         def __init__(self,name:str) -> None:

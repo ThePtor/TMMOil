@@ -1,100 +1,100 @@
-12  
-13  
-22  
-20  
-12  
-19  
-18  
-11  
-16  
-12  
-25  
-21  
-19  
-12  
-11  
-18  
-24  
-15  
-20  
-18  
-15  
-15  
-23  
-13  
-23  
-16  
-13  
-18  
-21  
-12  
-23  
-21  
-16  
-19  
-24  
-14  
-11  
-25  
-12  
-18  
-23  
-18  
-17  
-22  
-20  
-17  
-22  
-17  
-10  
-11  
-22  
-23  
-15  
-25  
-10  
-22  
-13  
-23  
-12  
-15  
-19  
-10  
-16  
-23  
-15  
-21  
-25  
-18  
-14  
-24  
-19  
-22  
-25  
-24  
-20  
-23  
-18  
-11  
-24  
-22  
-21  
-15  
-23  
-19  
-21  
-25 
-19
-16
-19
-14  
-19  
-25  
-23  
-13  
-22  
-23  
-25  
-19  
-11
-20  
+12 None True
+13 None True
+22 None True
+20 None True
+12 None True
+19 None True
+18 None True
+11 None True
+16 None True
+12 None True
+25 None True
+21 None True
+19 None True
+12 None True
+11 None True
+18 None True
+24 None True
+15 None True
+20 None True
+18 None True
+15 None True
+15 None True
+23 None True
+13 None True
+23 None True
+16 Červení True
+13 None True
+18 None True
+21 None True
+12 None True
+23 None True
+21 None True
+16 None True
+19 None True
+24 Oranžoví True
+14 Modří True
+11 None True
+25 None True
+12 None True
+18 None True
+23 None True
+18 None True
+17 None True
+22 None True
+20 Žlutí True
+17 Zelení True
+22 None True
+17 None True
+10 None True
+11 None True
+22 None True
+23 None True
+15 None True
+25 None True
+10 None True
+22 None True
+13 None True
+23 None True
+12 None True
+15 None True
+19 None True
+10 None True
+16 None True
+23 None True
+15 None True
+21 None True
+25 None True
+18 None True
+14 None True
+24 None True
+19 None True
+22 None True
+25 None True
+24 None True
+20 None True
+23 None True
+18 None True
+11 None True
+24 None True
+22 None True
+21 None True
+15 None True
+23 None True
+19 None True
+21 None True
+25 None True
+19 None True
+16 None True
+19 None True
+14 None True
+19 None True
+25 None True
+23 None True
+13 None True
+22 None True
+23 None True
+25 None True
+19 None True
+11 None True
+20 None True
