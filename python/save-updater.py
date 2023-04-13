@@ -1,7 +1,7 @@
 from tkinter import *
 import random
 
-data_path = "C:/Users/agon1/Desktop/TMMOil/data/"
+data_path = "C:/Users/pavel/Desktop/savetest/"
 #save.txt
 #map.txt
 #color-values.txt - optional
@@ -17,9 +17,11 @@ class Team:
         self.id = f"[{self.name}]"
         self.stats = {}
         self.fin = False
+        self.quest = False
         self.spending = 0
         self.m_color = "#"+hex(r)[2:]+hex(g)[2:]+hex(b)[2:]
         self.s_color = "#"+hex(r+128)[2:]+hex(g+128)[2:]+hex(b+128)[2:]
+
 
 
     def __repr__(self) -> str:
@@ -107,23 +109,23 @@ def add_colors(teams:list[Team], colorkeys):
 #tkinter funkce
 def lt_generate():
     for l in range(10): 
-        k = Label(okno, text=f"{abeceda[l]}", font=(30))
-        k.grid(column=(l+1), row=5)
+        k = Label(okno, text=f"{abeceda[l]}", image=im, height=80, width=80, compound="c", font=("TkDefaultFont Bold", 30))
+        k.grid(column=1+l, row=0, rowspan=2)
         letters.append(k)
 
 def num_generate():
     for n in range(10): 
-        l = Label(okno, text=f"{n+1}", font=(30))
-        l.grid(row=(6+n), column=0)
+        l = Label(okno, text=f"{n+1}",image=im, height=80, width=80, compound="c", font=("TkDefaultFont Bold",30))
+        l.grid(row=(2*n)+2, column=0, rowspan=2)
         numbers.append(l)
 
 def grid_generate():
     for i in range(len(tiles)): #generátor políček
         b = Button(okno, text=f"", image=im, compound="c", width=80, height=80, command= lambda x=i: buy_tile(x))
-        b.grid(row=(6+(i//10)), column=1+(i%10), sticky="e")
+        b.grid(row=2*(1+(i//10)), column=1+(i%10), sticky="e", rowspan=2)
         gridtiles.append(b)
-    l1 = Label(okno, text=f"Základní cena pozemku: ${baseprice}     Cena za přihození: ${baseincrease}", font=("Arial", 24))
-    l1.grid(row=17, column=1, columnspan=10)
+    l1 = Label(okno, image=im, compound="c", height=80, text=f"Základní cena pozemku: ${baseprice}     Cena za přihození: ${baseincrease}", font=("Arial", 24))
+    l1.grid(row=11*2, column=1, columnspan=10)
 
 def grid_engage():
     for i in range(100):
@@ -141,36 +143,43 @@ def top_screen():
     cash = "money"
     for y in range(len(teams)):
         body = []
-        o = Label(okno, text=f"{teams[y].name}", font=("Calibri Bold", 20), bg=teams[y].s_color)
-        o.grid(column=1+(2*y), row=0, columnspan=2)
+        o = Label(okno, text=f"${int(teams[y].stats[cash])}", font=("Arial Bold", 30), image=im, compound="c", bg=teams[y].s_color, width=240, height=160)
+        o.grid(column=22, row=2*(y*2+1), rowspan=4)
         body.append(o)
-        p = Label(okno, text=f"${teams[y].stats[cash]}", font=("Arial Bold", 15))
-        p.grid(column=1+(2*y), row=1, columnspan=2)
-        body.append(p)
-        q = Label(okno, text=f"Utraceno: ${teams[y].spending}", font=("Arial Bold", 15))
-        q.grid(column=1+(2*y), row=2, columnspan=2)   
-        body.append(q)
-        btn = Button(okno, text="Confirm", command= lambda x=y: quest_update(x))
-        body.append(btn)
+        col = Label(okno, image=im, width=40, height=160, bg=teams[y].s_color)
+        col.grid(column=21, row=2*(y*2+1), rowspan=4, padx=10)
+        body.append(col)
+        prompt = Label(okno, text="Počet vyřešených příkladů:", image=im, compound="r")
+        prompt.grid(column=23, row=2+(y*4))
+        body.append(prompt)
+        inp = Entry(okno)
+        inp.grid(column=24, row=2+(y*4))
+        body.append(inp)
+        cnf = Button(okno, text="Confirm", command=lambda x=y: quest_update(x))
+        cnf.grid(column=24, row=3+(y*4))
+        body.append(cnf)
         topstats.append(body)
 
 def quest_update(x):
     try:
-        value = topstats[x][2].get()
+        value = topstats[x][3].get()
         value = int(value)
         teams[x].edit_stat("searchBonus", value)
-        teams[x].fin = True
-        topstats[x][3].config(bg=teams[x].s_color)
+        topstats[x][1].config(bg=teams[x].m_color)
+        teams[x].quest = True
     except:
         pass
-    if check_end():
-        endingbutton = Button(okno, image=im, text="Save & Quit", command=save_quit, compound="c", font=("Comic Sans MS", 80), height=800, width=800)
-        endingbutton.grid(column=1, row=6, rowspan=10, columnspan=10)
+    if check_questions() and check_end():
+        s_button()
+
+def s_button():
+    sv = Button(okno, text="Save&Quit", image=im, width=120, command=save_quit, compound="c")
+    sv.grid(column=22, row=0)
 
 def save_quit():
     with open(data_path + "map.txt", "w", encoding="UTF-8") as soubor:
-                for tile in tiles:
-                    tile.export(soubor)
+        for tile in tiles:
+            tile.export(soubor)
 
     with open(data_path + "save.txt", "w", encoding="UTF-8") as soubor:    
         for line in extras:
@@ -184,22 +193,14 @@ def save_quit():
 def ts_update():
     cash = "money"
     for y in range(len(teams)):
-        topstats[y][0].config(text=f"{teams[y].name}", bg=teams[y].s_color)
-        topstats[y][1].config(text=f"${teams[y].stats[cash]}")
-        topstats[y][2].config(text=f"Utraceno: ${teams[y].spending}")
+        topstats[y][0].config(text=f"${int(teams[y].stats[cash])}")
+        topstats[y][1].config(text=f"Utraceno: ${teams[y].spending}")
+        if not teams[y].fin:
+            topstats[y][0].config(bg=teams[y].s_color)
+        else:
+            topstats[y][0].config(bg="#c1c1c1")
+    topstats[turn][0].config(bg=teams[turn].m_color)
 
-
-def ts_end():
-    for y in range(len(teams)):
-        teams[y].fin = False
-        topstats[y][1].destroy()
-        topstats[y][1] = Label(okno, text="Počet úloh:")
-        topstats[y][1].grid(column=1+(2*y), row = 1)
-        topstats[y][2].destroy()
-        topstats[y][2] = Entry(okno, width=5)
-        topstats[y][2].grid(column=2+(2*y), row = 1)
-        topstats[y][3].grid(column=2+(2*y), row = 2)
-    
 
 def check_end():
     ended = True
@@ -208,13 +209,23 @@ def check_end():
             ended = False
     return ended
     
+def check_questions():
+    ended = True
+    for team in teams:
+        if not team.quest:
+            ended = False
+    return ended
 
 def konec():
+    cash = "money"
     for x in range(len(tiles)):
         gridtiles[x].config(state=DISABLED)
-        if tiles[x].owner:
+        if tiles[x].owner:  
             gridtiles[x].config(text=f"{tiles[x].quality}", font=("TkDefaultFont", 24))
-    ts_end()
+    for y in range(len(teams)):
+        topstats[y][0].config(bg=teams[y].m_color, text=f"${int(teams[y].stats[cash])}\n-${teams[y].spending}")
+
+    
 
 def buy_tile(i):
     global turn
@@ -230,15 +241,17 @@ def buy_tile(i):
         tiles[i].owner = cur_player
         cur_player.spending = price
         gridtiles[i].config(bg=f"{cur_player.m_color}", text=f"${price}", font=("TkDefaultFont", 16))
-        ts_update()
         cur_player.fin = True
         if not check_end():
             while teams[turn].fin:
                 turn += 1
                 turn = turn%(len(teams))
-            topstats[turn][0].config(bg=teams[turn].m_color)
+            ts_update()
         else:
             konec()
+            if check_questions():
+                s_button()
+
     elif tiles[i].owner == None:
         tiles[i].owner = cur_player
         cur_player.spending = price
@@ -249,10 +262,11 @@ def buy_tile(i):
             while teams[turn].fin:
                 turn += 1
                 turn = turn%(len(teams))
-            topstats[turn][0].config(bg=teams[turn].m_color)
+            ts_update()
         else:
             konec()
-        
+            if check_questions():
+                s_button()
 
 #Začátek funkce týmů
 def main():
@@ -306,13 +320,14 @@ def main():
     
     okno.attributes("-fullscreen", True)
     okno.title("TMMoil pozemková aukce")
-
-
+    qu = Button(okno, text="Quit", image=im, width=120, command=okno.destroy, compound="c")
+    qu.grid(column=22, row=1) 
     lt_generate()
     num_generate()
     grid_generate()
     grid_engage()
     top_screen()
+    ts_update()
     okno.mainloop()
 
 okno = Tk()
