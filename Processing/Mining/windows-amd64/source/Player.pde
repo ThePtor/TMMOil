@@ -4,6 +4,7 @@ class Player {
   String name;
   float minedMoney;
   
+  float debt;
   
   color onColor = color(0);
   int onR, onG, onB;
@@ -12,6 +13,7 @@ class Player {
   int offR, offG, offB;
   
   int searchBonus;
+  int landQuality;
 
   boolean sold = false;
   int soldHold;
@@ -77,6 +79,11 @@ class Player {
          if (Lines[i][1].equals("searchBonus")) {
           searchBonus = int(Lines[i][2]);
         }
+        
+        if (Lines[i][1].equals("landQuality")) {
+          landQuality = int(Lines[i][2]);
+        }
+        
          if (Lines[i][1].equals("onColor")) {
            onR = int(Lines[i][2]);
            onG = int(Lines[i][3]);
@@ -168,13 +175,16 @@ class Player {
       cooldownHalfTime = 4;
     }
       
+  if(money < 0) {
+  debt = money;
+  }
   
   sold = false;
   soldHold = 0;
   soldAmount = 0;
   
   mined = 0;
-minedMoney = 0;
+  minedMoney = 0;
 
   miningBuffer = 0;
   bufferTimer = 0;
@@ -278,7 +288,7 @@ void ready() {
 
 
     fill(0);
-    text("Nádrž " + "(" + tankPrice + ")", w- rectSize / 2, h + rectSize);
+    text("Cisterna " + "(" + tankPrice + ")", w- rectSize / 2, h + rectSize);
     if (tank) fill(0);
     else if (mouseConstrained(xOffset+50, h + rectSize/2, w +100, h+ 3*rectSize/2)&& (money >= int(getPrice(tankPrice)))) {
       fill(150);
@@ -527,14 +537,14 @@ void ready() {
     int w = xOffset +210;
     textSize(80);
     text(name, xOffset + 210, h+120);
-    text(minedMoney + "$", w, h+200);
+    text(round(minedMoney) + "$", w, h+200);
     textSize(40);
         textAlign(CENTER, CENTER);
 
 fill(100);
 
     if(sold)
-    text("+" + soldAmount + "$", w, h+250);
+    text("+" + round2(soldAmount) + "$", w, h+250);
     textAlign(RIGHT, TOP);
 fill(0);
     int miningOffset = 0;

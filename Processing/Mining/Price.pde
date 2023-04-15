@@ -119,7 +119,8 @@ void oilPrice(int priceFunction) {
     }
 
     lastTime = time;
-    priceDelta =round2((sellInfluence * sellDelta) + sign * 8* 0.175 * priceDer(a1, a2, a3, b1, b2, b3, c1, c2, c3, time));
+    priceDelta =(sellInfluence * sellDelta) + sign * 8* 0.175 * priceDer(a1, a2, a3, b1, b2, b3, c1, c2, c3, time);
+    //priceDelta =sellInfluence * sellDelta;
     lastPrice = priceDelta;
     oilPrice += priceDelta;
   }
@@ -127,17 +128,17 @@ void oilPrice(int priceFunction) {
   fill(0);
   textAlign(CENTER, CENTER);
   textSize(250);
-  text(abs(oilPrice) + "$", width/2, 184);
+  text(abs(round2(oilPrice)) + "$", width/2, 184);
   textSize(100);
   textAlign(RIGHT, CENTER);
   imageMode(CENTER);
   if (lastPrice > 0) {
     fill(#2EB135);
-    text("+" + lastPrice + "$", width-70, 220);
+    text("+" + round2(lastPrice) + "$", width-70, 220);
     image(up, width-310, 220, 100, 100);
   } else {
     fill(#ff0000);
-    text((lastPrice + tempDelta) + "$", width-70, 220);
+    text((round2(lastPrice + tempDelta)) + "$", width-70, 220);
     image(down, width-310, 220, 100, 100);
   }
   imageMode(CORNER);
@@ -145,7 +146,7 @@ void oilPrice(int priceFunction) {
 
 float priceDer (float a1, float  a2, float  a3, float  b1, float  b2, float  b3, float  c1, float  c2, float  c3, int x) {
 
-  X = x * 0.175;
+  float X = x * 0.175;
 
   return((a1*a3*cos(a2+a3*X)) + (b1*b3*cos(b2+b3*X)) + (c1*c3*cos(c2+c3*X)));
 }

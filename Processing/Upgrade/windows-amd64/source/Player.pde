@@ -12,6 +12,7 @@ class Player {
   int offR, offG, offB;
   
   int searchBonus;
+  int landQuality;
 
   boolean sold = false;
   int soldHold;
@@ -77,6 +78,11 @@ class Player {
          if (Lines[i][1].equals("searchBonus")) {
           searchBonus = int(Lines[i][2]);
         }
+        
+        if (Lines[i][1].equals("landQuality")) {
+          landQuality = int(Lines[i][2]);
+        }
+        
          if (Lines[i][1].equals("onColor")) {
            onR = int(Lines[i][2]);
            onG = int(Lines[i][3]);
@@ -226,7 +232,8 @@ void ready() {
     textSize(100);
     
     
-    text("HOTOVO!", xOffset + 210, (height/2) -200);
+    text("MŮŽEME", xOffset + 210, (height/2) -250);
+    text("ZAČÍT", xOffset + 210, (height/2) - 150);
     textAlign(RIGHT, TOP);
     textSize(40);
 

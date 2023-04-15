@@ -7,8 +7,7 @@ boolean changedState;
 Player[] Players = new Player[5];
  color winnerColor = color(0);
 
-String dataPath= "C:/Users/agon1/Desktop/TMMOil/data/";
-
+String dataPath= "../../data/"; 
 boolean restart = false;
 
 PFont font;

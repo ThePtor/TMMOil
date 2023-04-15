@@ -7,7 +7,7 @@ byte cVal;
 boolean changedState;
 Player[] Players = new Player[5];
 
-String dataPath= "C:/Users/agon1/Desktop/TMMOil/data/";
+String dataPath= "../../data/"; 
 
 PFont font;
 float oilPrice;

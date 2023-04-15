@@ -14,10 +14,10 @@ for(int i = 0; i < 5; i++) {
   break;
   }
 }
-    text(int(landPrice), width/2, height/2);
+    text(round2(landPrice), width/2, height/2);
    //text(int(Players[0].buttonPressed), width/2, height/2);
 if(landPrice>0)
-  landPrice -= 2;
+  landPrice -= landPrice * 0.001;
 
 for(int i = 0; i < 5; i ++) {
 
@@ -35,7 +35,13 @@ else {
   text(winner, width/2, height/2-200);
   fill(0);
   text("Získávají akcii za ", width/2, height/2);
-  text(landPrice + " $", width/2, height/2+200);
+  text(round2(landPrice) + " $", width/2, height/2+200);
+  if(!restart)
+  if (keyPressed && (key == 'r')) {
+    restart();
+  initEstate();
+  restart = true;
+  }
 }
 
 }
@@ -49,9 +55,10 @@ for(int i = 0; i < 5; i++) {
 if (Players[i].money > landPrice)
 landPrice = Players[i].money;
 won = false;
+
 }
 
-landPrice = (int(landPrice / 1000)*1000) + 1000;
+landPrice = landPrice * 1.1;
 winner = "";
 
 
@@ -64,10 +71,17 @@ Players[i].money -= landPrice;
 savePlayers();
 exit();
 }
+}
 
-
+void restart () {
+for(int i = 0; i < 5; i++) {
+if (Players[i].name.equals(winner))
+Players[i].money -= landPrice;
+savePlayers();
 
 }
+}
+
 
 void drawPlayer(int index) {
   if(Players[index].money >= landPrice)
@@ -80,7 +94,7 @@ void drawPlayer(int index) {
   
   fill(0);
   textSize(80);
-  text( Players[index].money + " $",index*(width/5) + width/10, 300);
+  text( round2(Players[index].money) + " $",index*(width/5) + width/10, 300);
  
 
   

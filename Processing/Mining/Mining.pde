@@ -6,7 +6,7 @@ byte cVal;
 boolean changedState;
 Player[] Players = new Player[5];
 
-String dataPath= "C:/Users/agon1/Desktop/TMMOil/data/";
+String dataPath= "../../data/";  //Cesta do složky data
 
 
 PFont font;
@@ -16,7 +16,7 @@ IntList list = new IntList();
 int lastTime, lastTimeSold;
 float lastPrice;
 float soldBuffer;
-float sellInfluence = 3;
+float sellInfluence = 0.2; //Vliv prodeje na cenu
 boolean[] playerSold = new boolean[5];
 float tempDelta;
 int sign = 1;
@@ -31,7 +31,6 @@ boolean won;
 boolean playingSound;
 SoundFile sound;
 
-float X=0;
 
 int year = 2;
 
@@ -51,8 +50,8 @@ void setup() {
   }
   list.shuffle();
 
-     String portName = Serial.list()[0];
-    myPort = new Serial(this, portName, 9600);
+    // String portName = Serial.list()[0];
+    // myPort = new Serial(this, portName, 9600);
 
   font = createFont(dataPath + "WesternBangBang-Regular.ttf", 80);
   textFont(font);
@@ -227,6 +226,7 @@ void endMining() {
     
     Players[i].minedMoney+=(Players[i].sellBuffer * oilPrice);
     Players[i].money += Players[i].minedMoney;
+    Players[i].money += Players[i].debt;
     //Players[i].initializeStats();
     Players[i].loadImages();
   }
@@ -253,7 +253,18 @@ void mouseReleased() {
 
 
 void setButtons() {
+  
+  if (keyPressed && (key == ' ')) {
+  Players[4].buttonPressed = true;
+    }
+  else {
+  Players[4].buttonPressed = false;
 
+  
+  }
+  
+  
+/*
   if ( myPort.available() > 0) {
     cVal = byte(myPort.read());
     if ((cVal != 10)&&(cVal != 13)) {
@@ -270,11 +281,11 @@ void setButtons() {
         } else Players[i].buttonPressed = false;
       }
     
-  }
-}}
+    }}   */
+}
 
 
 float round2 (float num) {
 
-  return (round(num*100)/100);
+  return (float(round(num*100))/100);
 }
