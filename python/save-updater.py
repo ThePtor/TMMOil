@@ -1,7 +1,8 @@
 from tkinter import *
 import random
 
-data_path = "C:/Users/agon1/Desktop/TMMOil/data/"
+with open("dataPath.txt") as data_file: 
+    data_path = data_file.readline().strip()
 #save.txt
 #map.txt
 #color-values.txt - optional
