@@ -9,7 +9,7 @@ Player[] Players = new Player[5];
 String dataPath= "";  //Cesta do složky data
 
 boolean useButtons = true;
-
+float priceLowerCap = 5;
 PFont font;
 PImage miningBackground, upgradeBackground, up, down;
 float oilPrice;
@@ -109,6 +109,13 @@ void draw() {
     text(year + 1860, 210, 260);
     setButtons();
 
+float sellPrice;
+if (oilPrice < priceLowerCap){
+sellPrice = priceLowerCap;
+}
+else {
+sellPrice = oilPrice;
+}
     for (int i = 0; i < Players.length; i++) {
 
 
@@ -117,7 +124,7 @@ void draw() {
       Players[i].showUpgrades();
       Players[i].showMining();
       Players[i].timers(seconds);
-      Players[i].sell(oilPrice);
+      Players[i].sell(sellPrice);
     }
 
     oilPrice(year);
@@ -227,9 +234,17 @@ void beginMining() {
 
 void endMining() {
   gameState = "final";
+  
+  float sellPrice;
+if (oilPrice < priceLowerCap){
+sellPrice = priceLowerCap;
+}
+else {
+sellPrice = oilPrice;
+}
   for (int i = 0; i < 5; i++) {
     
-    Players[i].minedMoney+=(Players[i].sellBuffer * oilPrice);
+    Players[i].minedMoney+=(Players[i].sellBuffer * sellPrice);
     Players[i].money += Players[i].minedMoney;
     Players[i].money += Players[i].debt;
     //Players[i].initializeStats();

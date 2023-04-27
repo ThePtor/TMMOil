@@ -29,7 +29,7 @@ Player[] Players = new Player[5];
 String dataPath= "";  //Cesta do složky data
 
 boolean useButtons = true;
-
+float priceLowerCap = 5;
 PFont font;
 PImage miningBackground, upgradeBackground, up, down;
 float oilPrice;
@@ -129,6 +129,13 @@ useButtons = false;
     text(year + 1860, 210, 260);
     setButtons();
 
+float sellPrice;
+if (oilPrice < priceLowerCap){
+sellPrice = priceLowerCap;
+}
+else {
+sellPrice = oilPrice;
+}
     for (int i = 0; i < Players.length; i++) {
 
 
@@ -137,7 +144,7 @@ useButtons = false;
       Players[i].showUpgrades();
       Players[i].showMining();
       Players[i].timers(seconds);
-      Players[i].sell(oilPrice);
+      Players[i].sell(sellPrice);
     }
 
     oilPrice(year);
@@ -247,9 +254,17 @@ useButtons = false;
 
  public void endMining() {
   gameState = "final";
+  
+  float sellPrice;
+if (oilPrice < priceLowerCap){
+sellPrice = priceLowerCap;
+}
+else {
+sellPrice = oilPrice;
+}
   for (int i = 0; i < 5; i++) {
     
-    Players[i].minedMoney+=(Players[i].sellBuffer * oilPrice);
+    Players[i].minedMoney+=(Players[i].sellBuffer * sellPrice);
     Players[i].money += Players[i].minedMoney;
     Players[i].money += Players[i].debt;
     //Players[i].initializeStats();
@@ -1219,8 +1234,8 @@ float constant = 0.003f * (30 * (1 + mineIncrease) + 5 * logh * (3 + mineIncreas
     }
 
     lastTime = time;
-   // priceDelta =(sellInfluence * sellDelta) + sign * 8* 0.175 * priceDer(a1, a2, a3, b1, b2, b3, c1, c2, c3, time);
-    priceDelta =sellInfluence * sellDelta;
+    priceDelta =(sellInfluence * sellDelta) + sign * 8* 0.175f * priceDer(a1, a2, a3, b1, b2, b3, c1, c2, c3, time);
+   // priceDelta =sellInfluence * sellDelta;
     lastPrice = priceDelta;
     oilPrice += priceDelta;
   }
@@ -1228,17 +1243,32 @@ float constant = 0.003f * (30 * (1 + mineIncrease) + 5 * logh * (3 + mineIncreas
   fill(0);
   textAlign(CENTER, CENTER);
   textSize(250);
-  text(abs(round2(oilPrice)) + "$", width/2, 184);
+  float sellPrice;
+  boolean isCapped = false;
+if (oilPrice < priceLowerCap){
+sellPrice = priceLowerCap;
+isCapped = true;
+}
+else {
+sellPrice = oilPrice;
+}
+  text(abs(round2(sellPrice)) + "$", width/2, 184);
   textSize(100);
   textAlign(RIGHT, CENTER);
   imageMode(CENTER);
   if (lastPrice > 0) {
     fill(0xFF2EB135);
+    if (!isCapped)
     text("+" + round2(lastPrice) + "$", width-70, 220);
+    else
+    text(0 + "$", width-70, 220);
     image(up, width-310, 220, 100, 100);
   } else {
     fill(0xFFFF0000);
+    if (!isCapped)
     text((round2(lastPrice + tempDelta)) + "$", width-70, 220);
+    else
+    text(0 + "$", width-70, 220);
     image(down, width-310, 220, 100, 100);
   }
   imageMode(CORNER);

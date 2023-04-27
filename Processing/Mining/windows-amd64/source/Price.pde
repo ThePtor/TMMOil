@@ -119,8 +119,8 @@ void oilPrice(int priceFunction) {
     }
 
     lastTime = time;
-   // priceDelta =(sellInfluence * sellDelta) + sign * 8* 0.175 * priceDer(a1, a2, a3, b1, b2, b3, c1, c2, c3, time);
-    priceDelta =sellInfluence * sellDelta;
+    priceDelta =(sellInfluence * sellDelta) + sign * 8* 0.175 * priceDer(a1, a2, a3, b1, b2, b3, c1, c2, c3, time);
+   // priceDelta =sellInfluence * sellDelta;
     lastPrice = priceDelta;
     oilPrice += priceDelta;
   }
@@ -128,17 +128,32 @@ void oilPrice(int priceFunction) {
   fill(0);
   textAlign(CENTER, CENTER);
   textSize(250);
-  text(abs(round2(oilPrice)) + "$", width/2, 184);
+  float sellPrice;
+  boolean isCapped = false;
+if (oilPrice < priceLowerCap){
+sellPrice = priceLowerCap;
+isCapped = true;
+}
+else {
+sellPrice = oilPrice;
+}
+  text(abs(round2(sellPrice)) + "$", width/2, 184);
   textSize(100);
   textAlign(RIGHT, CENTER);
   imageMode(CENTER);
   if (lastPrice > 0) {
     fill(#2EB135);
+    if (!isCapped)
     text("+" + round2(lastPrice) + "$", width-70, 220);
+    else
+    text(0 + "$", width-70, 220);
     image(up, width-310, 220, 100, 100);
   } else {
     fill(#ff0000);
+    if (!isCapped)
     text((round2(lastPrice + tempDelta)) + "$", width-70, 220);
+    else
+    text(0 + "$", width-70, 220);
     image(down, width-310, 220, 100, 100);
   }
   imageMode(CORNER);
