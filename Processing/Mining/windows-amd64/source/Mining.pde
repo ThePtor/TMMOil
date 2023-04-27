@@ -31,7 +31,7 @@ boolean won;
 
 boolean playingSound;
 SoundFile sound;
-
+SoundFile sellSound;
 
 int year = 2;
 
@@ -44,6 +44,7 @@ void setup() {
   dataPath = loadStrings("dataPath.txt")[0].trim();
 
   frameRate(30);
+  sellSound = new SoundFile(this,dataPath + "sounds/coin-001.wav");
 
   sound = new SoundFile(this,dataPath + "Turmoil OST - 07 - Oil Spill Hoedown.mp3");
   for (int i = 0; i < 5; i++) {

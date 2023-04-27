@@ -283,7 +283,7 @@ class Player {
   boolean pipe, pipe2;
   String pipePrice = "200$";
 
-  float priceIncrement = 1.5f;
+  float priceIncrement = 2;
   boolean changedStat = false;
 
   PImage horseImage, rigImage, tankImage, siloImage, pipeImage, stopWatch, stopWatchBack;

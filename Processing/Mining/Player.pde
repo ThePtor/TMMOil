@@ -34,7 +34,7 @@ class Player {
   boolean pipe, pipe2;
   String pipePrice = "200$";
 
-  float priceIncrement = 1.5;
+  float priceIncrement = 2;
   boolean changedStat = false;
 
   PImage horseImage, rigImage, tankImage, siloImage, pipeImage, stopWatch, stopWatchBack;
@@ -574,6 +574,7 @@ float constant = 0.003 * (30 * (1 + mineIncrease) + 5 * logh * (3 + mineIncrease
       if (sellBuffer>0) {
         sold = true;
         soldHold = 2;
+        sellSound.play();
       }
       if (sellBuffer != 0)
         soldAmount = sellBuffer * abs(price);
