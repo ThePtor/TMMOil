@@ -37,7 +37,7 @@ else {
   text("Získávají akcii za ", width/2, height/2);
   text(round2(landPrice) + " $", width/2, height/2+200);
   if(!restart)
-  if (keyPressed && (key == 'r')) {
+  if (keyPressed && (key == 'a')) {
     restart();
   initEstate();
   restart = true;
