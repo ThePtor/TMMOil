@@ -1,5 +1,5 @@
-year 10
-Červení money 5500.0
+year 0
+Červení money 500.0
 Červení horse true true MAX
 Červení tank true true MAX
 Červení rig true true MAX
@@ -10,7 +10,7 @@ year 10
 Červení landQuality 5
 Červení onColor 204 9 47
 Červení offColor 253 177 192
-Oranžoví money 300.0
+Oranžoví money 100.0
 Oranžoví horse true false 300$
 Oranžoví tank false false 200$
 Oranžoví rig false false 200$
@@ -21,7 +21,7 @@ Oranžoví searchBonus 5
 Oranžoví landQuality 6
 Oranžoví onColor 255 100 24
 Oranžoví offColor 253 198 137
-Žlutí money 43362.0
+Žlutí money 100.0
 Žlutí horse true true MAX
 Žlutí tank true false 300$
 Žlutí rig true false 300$
@@ -32,7 +32,7 @@ Oranžoví offColor 253 198 137
 Žlutí landQuality 12
 Žlutí onColor 252 225 34
 Žlutí offColor 255 247 153
-Zelení money 14744.0
+Zelení money 100.0
 Zelení horse true false 300$
 Zelení tank false false 200$
 Zelení rig false false 200$
@@ -43,7 +43,7 @@ Zelení searchBonus 12
 Zelení landQuality 16
 Zelení onColor 46 177 53
 Zelení offColor 196 223 155
-Modří money 11854.0
+Modří money 100.0
 Modří horse true true MAX
 Modří tank true true MAX
 Modří rig true true MAX
