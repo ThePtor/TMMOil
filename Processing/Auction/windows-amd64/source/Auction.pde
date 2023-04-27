@@ -34,12 +34,16 @@ boolean won= false;
 
 float X =0;
 
+PImage background, winBanner, banner;
 
 int year;
 
 void setup() {
   dataPath = loadStrings("dataPath.txt")[0].trim();
 
+background = loadImage(dataPath + "Auction/auction-bg.png");
+winBanner = loadImage(dataPath + "Auction/auc-2.png");
+banner = loadImage(dataPath + "Auction/auc-1.png");
   frameRate(30);
 
   for (int i = 0; i < 5; i++) {
@@ -87,6 +91,7 @@ initEstate();
 
 
 void draw() {
+  
 setButtons();
   estate();
   

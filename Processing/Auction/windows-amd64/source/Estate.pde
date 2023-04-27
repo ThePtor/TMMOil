@@ -1,7 +1,11 @@
 void estate() {
-  background(255);
+  //background(255);
+  imageMode(CORNER);
+  image(background, 0, 0);
   textSize(200);
   fill(0);
+  
+  
 if (!won){
     
 
@@ -14,7 +18,16 @@ for(int i = 0; i < 5; i++) {
   break;
   }
 }
-    text(round2(landPrice), width/2, height/2);
+imageMode(CENTER);
+image(banner, width/2,height/2);
+textSize(250);
+if(landPrice > 1000) 
+    text(int(landPrice) + " $", width/2, height/2 - 60);
+else if (landPrice > 100)
+    text(nf(landPrice, 0, 1) + " $", width/2, height/2 - 60);
+    
+else 
+    text(nf(landPrice, 0, 2) + " $", width/2, height/2 - 60);
    //text(int(Players[0].buttonPressed), width/2, height/2);
 if(landPrice>0)
   landPrice -= landPrice * 0.001;
@@ -30,12 +43,16 @@ drawPlayer(i);
 }
 
 else {
+  imageMode(CENTER);
+  image(winBanner, width/2, height/2);
   fill(winnerColor);
   textSize(200);
-  text(winner, width/2, height/2-200);
+  text(winner, width/2, height/2-300);
   fill(0);
-  text("Získávají akcii za ", width/2, height/2);
-  text(round2(landPrice) + " $", width/2, height/2+200);
+  textSize(100);
+  text("Získávají akcii za ", width/2, height/2 - 150);
+  textSize(200);
+  text(int(landPrice) + " $", width/2, height/2);
   if(!restart)
   if (keyPressed && (key == 'a')) {
     restart();
@@ -84,17 +101,27 @@ savePlayers();
 
 
 void drawPlayer(int index) {
+  
+  strokeWeight(10);
+  rectMode(CENTER);
+  stroke(Players[index].onColor);
+  
+  
   if(Players[index].money >= landPrice)
   fill(Players[index].onColor);
   else
   fill(Players[index].offColor);
-  textSize(120);
+  
+  rect(index*(width/5) + width/10, 200, 300, 220);
+  textSize(100);
   textAlign(CENTER, CENTER);
-  text( Players[index].name,index*(width/5) + width/10, 200);
+  
+  fill(0);
+  text( Players[index].name,index*(width/5) + width/10, 150);
   
   fill(0);
   textSize(80);
-  text( round2(Players[index].money) + " $",index*(width/5) + width/10, 300);
+  text( round2(Players[index].money) + " $",index*(width/5) + width/10, 250);
  
 
   
