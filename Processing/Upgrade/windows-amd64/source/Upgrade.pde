@@ -6,7 +6,9 @@ byte cVal;
 boolean changedState;
 Player[] Players = new Player[5];
 
-String dataPath= "../../data/"; 
+String dataPath= "";  //Cesta do složky data
+
+boolean useButtons = true;
 
 PFont font;
 PImage miningBackground, upgradeBackground, up, down;
@@ -41,7 +43,7 @@ int timeLimit = 365;
 String gameState = "upgrade";
 int startTime;
 void setup() {
-
+  dataPath = loadStrings("dataPath.txt")[0].trim();
 
   frameRate(30);
 
@@ -51,8 +53,14 @@ void setup() {
   }
   list.shuffle();
 
+     if(Serial.list().length > 0) {
      String portName = Serial.list()[0];
-    myPort = new Serial(this, portName, 9600);
+
+     myPort = new Serial(this, portName, 9600);
+ }
+ else{  
+useButtons = false;
+ }
 
   font = createFont(dataPath + "WesternBangBang-Regular.ttf", 80);
   textFont(font);
@@ -156,7 +164,45 @@ void mouseReleased() {
 
 
 void setButtons() {
+  
+  if (!useButtons) {
+  
+  if (keyPressed && (key == 'r')) {
+  Players[0].buttonPressed = true;
+    }
+  else {
+  Players[0].buttonPressed = false;
+  }
+    if (keyPressed && (key == 'o')) {
+  Players[1].buttonPressed = true;
+    }
+  else {
+  Players[1].buttonPressed = false;
+  }
+  if (keyPressed && (key == 'y')) {
+  Players[2].buttonPressed = true;
+    }
+  else {
+  Players[2].buttonPressed = false;
+  }
+    if (keyPressed && (key == 'g')) {
+  Players[3].buttonPressed = true;
+    }
+  else {
+  Players[3].buttonPressed = false;
+  }
+  if (keyPressed && (key == 'b')) {
+  Players[4].buttonPressed = true;
+    }
+  else {
+  Players[4].buttonPressed = false;
+  }
 
+
+  
+  }
+  else{
+  
   if ( myPort.available() > 0) {
     cVal = byte(myPort.read());
     if ((cVal != 10)&&(cVal != 13)) {
@@ -173,8 +219,9 @@ void setButtons() {
         } else Players[i].buttonPressed = false;
       }
     
+    }}
   }
-}}
+}
 
 
 float round2 (float num) {

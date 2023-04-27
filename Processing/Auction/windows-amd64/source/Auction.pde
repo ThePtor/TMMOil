@@ -38,7 +38,7 @@ float X =0;
 int year;
 
 void setup() {
-  dataPath = loadStrings("dataPath.txt")[0];
+  dataPath = loadStrings("dataPath.txt")[0].trim();
 
   frameRate(30);
 

@@ -1,56 +1,56 @@
-year 3
-Červení money 8000.0
-Červení horse false false 200$
-Červení tank false false 200$
-Červení rig false false 200$
+year 10
+Červení money 5500.0
+Červení horse true true MAX
+Červení tank true true MAX
+Červení rig true true MAX
 Červení silo false false 200$
 Červení search false false 200$
-Červení pipe false false 200$
-Červení searchBonus 3
-Červení landQuality 0
+Červení pipe true true MAX
+Červení searchBonus 1
+Červení landQuality 5
 Červení onColor 204 9 47
 Červení offColor 253 177 192
-Oranžoví money 1000.0
-Oranžoví horse false false 200$
+Oranžoví money 300.0
+Oranžoví horse true false 300$
 Oranžoví tank false false 200$
 Oranžoví rig false false 200$
 Oranžoví silo false false 200$
 Oranžoví search false false 200$
 Oranžoví pipe false false 200$
-Oranžoví searchBonus 2
-Oranžoví landQuality 0
+Oranžoví searchBonus 5
+Oranžoví landQuality 6
 Oranžoví onColor 255 100 24
 Oranžoví offColor 253 198 137
-Žlutí money 44300.0
+Žlutí money 43362.0
 Žlutí horse true true MAX
-Žlutí tank false false 200$
-Žlutí rig false false 200$
-Žlutí silo false false 200$
-Žlutí search false false 200$
-Žlutí pipe false false 200$
-Žlutí searchBonus 5
-Žlutí landQuality 0
+Žlutí tank true false 300$
+Žlutí rig true false 300$
+Žlutí silo true false 300$
+Žlutí search true false 300$
+Žlutí pipe true true MAX
+Žlutí searchBonus 8
+Žlutí landQuality 12
 Žlutí onColor 252 225 34
 Žlutí offColor 255 247 153
-Zelení money -1000.0
+Zelení money 14744.0
 Zelení horse true false 300$
 Zelení tank false false 200$
 Zelení rig false false 200$
 Zelení silo false false 200$
 Zelení search false false 200$
 Zelení pipe false false 200$
-Zelení searchBonus 1
-Zelení landQuality 0
+Zelení searchBonus 12
+Zelení landQuality 16
 Zelení onColor 46 177 53
 Zelení offColor 196 223 155
-Modří money 14854.0
+Modří money 11854.0
 Modří horse true true MAX
 Modří tank true true MAX
 Modří rig true true MAX
 Modří silo true true MAX
 Modří search true true MAX
 Modří pipe true true MAX
-Modří searchBonus 4
-Modří landQuality 0
+Modří searchBonus 12
+Modří landQuality 16
 Modří onColor 0 57 166
 Modří offColor 141 201 232

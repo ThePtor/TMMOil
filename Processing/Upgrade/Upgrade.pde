@@ -43,7 +43,7 @@ int timeLimit = 365;
 String gameState = "upgrade";
 int startTime;
 void setup() {
-  dataPath = loadStrings("dataPath.txt")[0];
+  dataPath = loadStrings("dataPath.txt")[0].trim();
 
   frameRate(30);
 

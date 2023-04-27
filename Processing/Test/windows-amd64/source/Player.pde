@@ -3,6 +3,16 @@ class Player {
   float money = 99999;
   String name;
   float minedMoney;
+  
+  
+  color onColor = color(0);
+  int onR, onG, onB;
+  
+  color offColor = color(0);
+  int offR, offG, offB;
+  
+  int searchBonus;
+  int landQuality;
 
   boolean sold = false;
   int soldHold;
@@ -27,6 +37,8 @@ class Player {
   boolean changedStat = false;
 
   PImage horseImage, rigImage, tankImage, siloImage, pipeImage, stopWatch, stopWatchBack;
+
+  boolean ready;
 
   int miningFunction;
   float miningBuffer;
@@ -61,6 +73,29 @@ class Player {
 
         if (Lines[i][1].equals("money")) {
           money = int(Lines[i][2]);
+        }
+        
+         if (Lines[i][1].equals("searchBonus")) {
+          searchBonus = int(Lines[i][2]);
+        }
+        
+        if (Lines[i][1].equals("landQuality")) {
+          landQuality = int(Lines[i][2]);
+        }
+        
+         if (Lines[i][1].equals("onColor")) {
+           onR = int(Lines[i][2]);
+           onG = int(Lines[i][3]);
+           onB = int(Lines[i][4]);       
+          onColor = color(onR, onG, onB);
+          
+        }
+         if (Lines[i][1].equals("offColor")) {
+           offR = int(Lines[i][2]);
+           offG = int(Lines[i][3]);
+           offB = int(Lines[i][4]);
+          offColor = color(offR, offG, offB);
+     
         }
 
         if (Lines[i][1].equals("horse")) {
@@ -169,21 +204,43 @@ minedMoney = 0;
     println(name + " " + "pipe"+ " " + pipe + " " + pipe2);
   }
 
-  void saveStats() {
+  //void saveStats() {
 
-    PrintWriter output = createWriter("save.txt");
-    output.println(name + " " + "money"+ " " + money);
-    output.println(name + " " + "horse"+ " " + horse + " " + horse2 + " " + horsePrice);
-    output.println(name + " " + "tank"+ " " + tank + " " + tank2 + " " + tankPrice);
-    output.println(name + " " + "rig"+ " " + rig + " " + rig2 + " " + rigPrice);
-    output.println(name + " " + "silo"+ " " + silo + " " + silo2 + " " + siloPrice);
-    output.println(name + " " + "search"+ " " + search + " " + search2 + " " + searchPrice);
-    output.println(name + " " + "pipe"+ " " + pipe + " " + pipe2 + " " + pipePrice);
-    output.flush();
-    output.close();
-  }
+  //  PrintWriter output = createWriter("save.txt");
+  //  output.println(name + " " + "money"+ " " + money);
+  //  output.println(name + " " + "horse"+ " " + horse + " " + horse2 + " " + horsePrice);
+  //  output.println(name + " " + "tank"+ " " + tank + " " + tank2 + " " + tankPrice);
+  //  output.println(name + " " + "rig"+ " " + rig + " " + rig2 + " " + rigPrice);
+  //  output.println(name + " " + "silo"+ " " + silo + " " + silo2 + " " + siloPrice);
+  //  output.println(name + " " + "search"+ " " + search + " " + search2 + " " + searchPrice);
+  //  output.println(name + " " + "pipe"+ " " + pipe + " " + pipe2 + " " + pipePrice);
+  //  output.println(name + " " + "onColor"+ " " + onColor);
+  //  output.println(name + " " + "onColor"+ " " + onColor);
+  //  output.println(name + " " + "searchBonus"+ " " + searchBonus);
+  //  output.flush();
+  //  output.close();
+  //}
+
+void ready() {
+    fill(0);
+    textAlign(CENTER, CENTER);
+    textSize(100);
+    text(name, xOffset + 210, 100);
+
+    fill(0);
+    ellipseMode(CORNER);
+    textSize(100);
+    
+    
+    text("MŮŽEME", xOffset + 210, (height/2) -250);
+    text("ZAČÍT", xOffset + 210, (height/2) - 150);
+    textAlign(RIGHT, TOP);
+    textSize(40);
+
+}
 
   void upgrade() {
+    if(buttonPressed) ready = true;
     fill(0);
     textAlign(CENTER, CENTER);
     textSize(100);

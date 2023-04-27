@@ -311,7 +311,7 @@ def main():
     add_colors(teams, colors)
     tiles = create_tiles(dilky)
     teams.sort(key= lambda x: x.stats["money"])
-    print(teams)
+    #print(teams)
     #vytvoří týmy a přiřadí k nim barvy a dílky
 
 

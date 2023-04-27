@@ -6,8 +6,9 @@ byte cVal;
 boolean changedState;
 Player[] Players = new Player[5];
 
-String dataPath= "../../data/";  //Cesta do složky data
+String dataPath= "";  //Cesta do složky data
 
+boolean useButtons = true;
 
 PFont font;
 PImage miningBackground, upgradeBackground, up, down;
@@ -16,7 +17,7 @@ IntList list = new IntList();
 int lastTime, lastTimeSold;
 float lastPrice;
 float soldBuffer;
-float sellInfluence = 0.2; //Vliv prodeje na cenu
+float sellInfluence = 0.4; //Vliv prodeje na cenu
 boolean[] playerSold = new boolean[5];
 float tempDelta;
 int sign = 1;
@@ -40,23 +41,27 @@ int timeLimit = 365;
 String gameState = "upgrade";
 int startTime;
 void setup() {
-
+  dataPath = loadStrings("dataPath.txt")[0].trim();
 
   frameRate(30);
 
   sound = new SoundFile(this,dataPath + "Turmoil OST - 07 - Oil Spill Hoedown.mp3");
   for (int i = 0; i < 5; i++) {
-    list.append(0);
+    list.append(i);
   }
   list.shuffle();
+ if(Serial.list().length > 0) {
+     String portName = Serial.list()[0];
 
-    // String portName = Serial.list()[0];
-    // myPort = new Serial(this, portName, 9600);
-
+     myPort = new Serial(this, portName, 9600);
+ }
+ else{  
+useButtons = false;
+ }
   font = createFont(dataPath + "WesternBangBang-Regular.ttf", 80);
   textFont(font);
   fullScreen();
-  size(1920, 1080);
+  //size(1920, 1080);
 
 
   String[] inputLines = loadStrings(dataPath + "save.txt");
@@ -254,17 +259,44 @@ void mouseReleased() {
 
 void setButtons() {
   
-  if (keyPressed && (key == ' ')) {
+  if (!useButtons) {
+  
+  if (keyPressed && (key == 'r')) {
+  Players[0].buttonPressed = true;
+    }
+  else {
+  Players[0].buttonPressed = false;
+  }
+    if (keyPressed && (key == 'o')) {
+  Players[1].buttonPressed = true;
+    }
+  else {
+  Players[1].buttonPressed = false;
+  }
+  if (keyPressed && (key == 'y')) {
+  Players[2].buttonPressed = true;
+    }
+  else {
+  Players[2].buttonPressed = false;
+  }
+    if (keyPressed && (key == 'g')) {
+  Players[3].buttonPressed = true;
+    }
+  else {
+  Players[3].buttonPressed = false;
+  }
+  if (keyPressed && (key == 'b')) {
   Players[4].buttonPressed = true;
     }
   else {
   Players[4].buttonPressed = false;
+  }
+
 
   
   }
+  else{
   
-  
-/*
   if ( myPort.available() > 0) {
     cVal = byte(myPort.read());
     if ((cVal != 10)&&(cVal != 13)) {
@@ -281,7 +313,8 @@ void setButtons() {
         } else Players[i].buttonPressed = false;
       }
     
-    }}   */
+    }}
+  }
 }
 
 
