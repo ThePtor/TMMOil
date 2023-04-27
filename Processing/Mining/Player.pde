@@ -3,15 +3,15 @@ class Player {
   float money = 99999;
   String name;
   float minedMoney;
-  
+
   float debt;
-  
+
   color onColor = color(0);
   int onR, onG, onB;
-  
+
   color offColor = color(0);
   int offR, offG, offB;
-  
+
   int searchBonus;
   int landQuality;
 
@@ -19,7 +19,7 @@ class Player {
   int soldHold;
   float soldAmount;
   float soldOil;
-  
+
   float mined;
   boolean horse, horse2;
   String horsePrice = "200$";
@@ -75,28 +75,26 @@ class Player {
         if (Lines[i][1].equals("money")) {
           money = int(Lines[i][2]);
         }
-        
-         if (Lines[i][1].equals("searchBonus")) {
+
+        if (Lines[i][1].equals("searchBonus")) {
           searchBonus = int(Lines[i][2]);
         }
-        
+
         if (Lines[i][1].equals("landQuality")) {
           landQuality = int(Lines[i][2]);
         }
-        
-         if (Lines[i][1].equals("onColor")) {
-           onR = int(Lines[i][2]);
-           onG = int(Lines[i][3]);
-           onB = int(Lines[i][4]);       
+
+        if (Lines[i][1].equals("onColor")) {
+          onR = int(Lines[i][2]);
+          onG = int(Lines[i][3]);
+          onB = int(Lines[i][4]);
           onColor = color(onR, onG, onB);
-          
         }
-         if (Lines[i][1].equals("offColor")) {
-           offR = int(Lines[i][2]);
-           offG = int(Lines[i][3]);
-           offB = int(Lines[i][4]);
+        if (Lines[i][1].equals("offColor")) {
+          offR = int(Lines[i][2]);
+          offG = int(Lines[i][3]);
+          offB = int(Lines[i][4]);
           offColor = color(offR, offG, offB);
-     
         }
 
         if (Lines[i][1].equals("horse")) {
@@ -149,11 +147,12 @@ class Player {
       mineIncrease = 1;
 
     if (silo2)
-      siloCap = 250;
-    else if (silo)
       siloCap = 200;
+    else if (silo)
+      siloCap = 100;
     else
-      siloCap = 150;
+      siloCap = 60;
+
 
     if (tank2)
       sellCap = 30;
@@ -165,37 +164,34 @@ class Player {
     if (horse2) {
       maxCooldown = 5;
       cooldownHalfTime = 2;
-    }
-    else if (horse){
+    } else if (horse) {
       maxCooldown = 7;
       cooldownHalfTime = 3;
-    }
-    else {
+    } else {
       maxCooldown = 10;
       cooldownHalfTime = 4;
     }
-      
-  if(money < 0) {
-  debt = money;
-  }
-  
-  sold = false;
-  soldHold = 0;
-  soldAmount = 0;
-  
-  mined = 0;
-  minedMoney = 0;
 
-  miningBuffer = 0;
-  bufferTimer = 0;
-  lastMined = 0;
+    if (money < 0) {
+      debt = money;
+    }
 
-   timerLast = 0;
-   timer = 0;
+    sold = false;
+    soldHold = 0;
+    soldAmount = 0;
 
-  sellBuffer = 0;
-  sellCooldown = 0;
+    mined = 0;
+    minedMoney = 0;
 
+    miningBuffer = 0;
+    bufferTimer = 0;
+    lastMined = 0;
+
+    timerLast = 0;
+    timer = 0;
+
+    sellBuffer = 0;
+    sellCooldown = 0;
   }
 
   void printStats () {
@@ -225,7 +221,7 @@ class Player {
   //  output.close();
   //}
 
-void ready() {
+  void ready() {
     fill(0);
     textAlign(CENTER, CENTER);
     textSize(100);
@@ -234,17 +230,16 @@ void ready() {
     fill(0);
     ellipseMode(CORNER);
     textSize(100);
-    
-    
+
+
     text("MŮŽEME", xOffset + 210, (height/2) -250);
     text("ZAČÍT", xOffset + 210, (height/2) - 150);
     textAlign(RIGHT, TOP);
     textSize(40);
-
-}
+  }
 
   void upgrade() {
-    if(buttonPressed) ready = true;
+    if (buttonPressed) ready = true;
     fill(0);
     textAlign(CENTER, CENTER);
     textSize(100);
@@ -476,26 +471,38 @@ void ready() {
 
   float mine(int time) {
     float mining = 0;
-
+    float variable = 0;
     switch (miningFunction) {
 
+      // mineIncrease = zvýšení podle levelu věže
+      // searchBonus = počet vyřešených úloh
+      // landQuality = kvalita území
+
     case 0:
-      mining = 1 + mineIncrease;
+      variable = (1 + sin(sin(0.035 * time) - 0.07 * time));
       break;
     case 1:
+      variable = (1 + sin(cos(2 + (0.07 * time)) - 0.035 * time));
 
       break;
     case 2:
+      variable = (1 + cos(cos(0.07 * time) + 0.035 * time));
 
       break;
     case 3:
+      variable = (1 + cos(sin(0.07 * time) + 0.035 * time));
 
       break;
     case 4:
+      variable = (1 + cos(2 * sin(0.07 * time) - 0.035 * time));
 
 
       break;
     }
+    variable = variable * (0.026 * (1 + mineIncrease) * searchBonus) ;
+    float logh = log(landQuality - 4) / log(2);
+float constant = 0.003 * (30 * (1 + mineIncrease) + 5 * logh * (3 + mineIncrease));
+    mining = variable + constant;
 
 
 
@@ -518,9 +525,9 @@ void ready() {
     if (sellCooldown > 0)
       sellCooldown = sellCooldown - timer;
     if (soldHold > 0)
-    soldHold -= timer;
+      soldHold -= timer;
     if (soldHold == 0)
-    sold = false;
+      sold = false;
     timerLast = seconds;
   }
 
@@ -539,14 +546,14 @@ void ready() {
     text(name, xOffset + 210, h+120);
     text(round(minedMoney) + "$", w, h+200);
     textSize(40);
-        textAlign(CENTER, CENTER);
+    textAlign(CENTER, CENTER);
 
-fill(100);
+    fill(100);
 
-    if(sold)
-    text("+" + round2(soldAmount) + "$", w, h+250);
+    if (sold)
+      text("+" + round2(soldAmount) + "$", w, h+250);
     textAlign(RIGHT, TOP);
-fill(0);
+    fill(0);
     int miningOffset = 0;
     if (silo2)
       miningOffset = 80;
@@ -555,25 +562,24 @@ fill(0);
     else miningOffset = 0;
 
     //text("buffer: " + miningBuffer,w, h + 100);
-    text(mined + "/" + siloCap, w + 130, h + 370 + rectSize - miningOffset);
+    text(round2(mined) + "/" + siloCap, w + 130, h + 370 + rectSize - miningOffset);
     //text("sellBuffer: " + sellBuffer, w , h + 2*rectSize);
     //text("sellCooldown: " + sellCooldown, w, h  + 3*rectSize);
   }
 
 
   void sell(float price) {
-price = abs(price);
+    price = abs(price);
     if (sellCooldown == cooldownHalfTime) {
-      if(sellBuffer>0) {
-      sold = true;
-      soldHold = 2;
+      if (sellBuffer>0) {
+        sold = true;
+        soldHold = 2;
       }
-      if(sellBuffer != 0)
-      soldAmount = sellBuffer * price;
+      if (sellBuffer != 0)
+        soldAmount = sellBuffer * abs(price);
       soldOil = sellBuffer;
       minedMoney = minedMoney + (sellBuffer * price);
       sellBuffer = 0;
-      
     }
 
     if (buttonPressed && (sellCooldown == 0)) {
@@ -601,19 +607,18 @@ price = abs(price);
     } else {
       imageMode(CENTER);
       if (sellCooldown > (cooldownHalfTime)) {
-      textAlign(CENTER, CENTER);
-      textSize(80);
-      text(sellCooldown - cooldownHalfTime, xOffset + 210 + 64, 970 );
-      image(stopWatch, xOffset + 210, 970);
-       }
-      else {
-      textAlign(CENTER, CENTER);
-      textSize(80);
-      text(sellCooldown, xOffset + 210 - 64, 970 );
-      image(stopWatchBack, xOffset + 210, 970);
+        textAlign(CENTER, CENTER);
+        textSize(80);
+        text(sellCooldown - cooldownHalfTime, xOffset + 210 + 64, 970 );
+        image(stopWatch, xOffset + 210, 970);
+      } else {
+        textAlign(CENTER, CENTER);
+        textSize(80);
+        text(sellCooldown, xOffset + 210 - 64, 970 );
+        image(stopWatchBack, xOffset + 210, 970);
       }
-     
-    }imageMode(CORNER);
+    }
+    imageMode(CORNER);
     image(rigImage, xOffset + 50, 592);
 
     if (pipe||pipe2)

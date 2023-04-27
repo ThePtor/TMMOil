@@ -119,8 +119,8 @@ void oilPrice(int priceFunction) {
     }
 
     lastTime = time;
-    priceDelta =(sellInfluence * sellDelta) + sign * 8* 0.175 * priceDer(a1, a2, a3, b1, b2, b3, c1, c2, c3, time);
-    //priceDelta =sellInfluence * sellDelta;
+   // priceDelta =(sellInfluence * sellDelta) + sign * 8* 0.175 * priceDer(a1, a2, a3, b1, b2, b3, c1, c2, c3, time);
+    priceDelta =sellInfluence * sellDelta;
     lastPrice = priceDelta;
     oilPrice += priceDelta;
   }
@@ -162,7 +162,7 @@ void soldBuffer() {
       sellCounter ++;
 
 
-      sellDelta = pow(2, sellCounter);
+      sellDelta = pow(1.2, sellCounter/2);
 
       if (soldBuffer - sellDelta < 0) {
         sellDelta = soldBuffer;
