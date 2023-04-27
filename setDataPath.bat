@@ -9,4 +9,5 @@ echo %input% > Processing/Test/windows-amd64/dataPath.txt
 echo %input% > Processing/Test/dataPath.txt
 echo %input% > Processing/Upgrade/windows-amd64/dataPath.txt
 echo %input% > Processing/Upgrade/dataPath.txt
+echo %input% > python/dataPath.txt
 pause
