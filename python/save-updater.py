@@ -194,7 +194,7 @@ def save_quit():
 def ts_update():
     cash = "money"
     for y in range(len(teams)):
-        topstats[y][0].config(text=f"${int(teams[y].stats[cash])}")
+        topstats[y][0].config(text=f"${int(teams[y].stats[cash])-teams[y].spending}")
         topstats[y][1].config(text=f"Utraceno: ${teams[y].spending}")
         if not teams[y].fin:
             topstats[y][0].config(bg=teams[y].s_color)
@@ -224,7 +224,7 @@ def konec():
         if tiles[x].owner:  
             gridtiles[x].config(text=f"{tiles[x].quality}", font=("TkDefaultFont", 24))
     for y in range(len(teams)):
-        topstats[y][0].config(bg=teams[y].m_color, text=f"${int(teams[y].stats[cash])}\n-${teams[y].spending}")
+        topstats[y][0].config(bg=teams[y].m_color, text=f"${int(teams[y].stats[cash]-teams[y].spending)}")
 
     
 
