@@ -1,56 +1,56 @@
-year 0
-Červení money 120000
-Červení horse false false 8000$
-Červení tank false false 8000$
-Červení rig false false 15000$
-Červení silo false false 8000$
-Červení search false false 8000$
-Červení pipe false false 8000$
-Červení searchBonus 0
-Červení landQuality 0
+year 9
+Červení money 14357.0
+Červení horse true true MAX
+Červení tank true false 4800$
+Červení rig true false 15000$
+Červení silo false false 4000$
+Červení search true false 7200$
+Červení pipe true false 4500$
+Červení searchBonus 14
+Červení landQuality 18
 Červení onColor 204 9 47
 Červení offColor 253 177 192
-Oranžoví money 0.0
-Oranžoví horse false false 8000$
-Oranžoví tank false false 8000$
-Oranžoví rig false false 15000$
-Oranžoví silo false false 8000$
-Oranžoví search false false 8000$
-Oranžoví pipe false false 8000$
-Oranžoví searchBonus 0
-Oranžoví landQuality 0
+Oranžoví money 23893.762
+Oranžoví horse true true MAX
+Oranžoví tank true true MAX
+Oranžoví rig true true MAX
+Oranžoví silo true true MAX
+Oranžoví search true true MAX
+Oranžoví pipe true true MAX
+Oranžoví searchBonus 12
+Oranžoví landQuality 15
 Oranžoví onColor 255 100 24
 Oranžoví offColor 253 198 137
-Žlutí money 0.0
-Žlutí horse false false 8000$
-Žlutí tank false false 8000$
-Žlutí rig false false 15000$
-Žlutí silo false false 8000$
-Žlutí search false false 8000$
-Žlutí pipe false false 8000$
-Žlutí searchBonus 0
-Žlutí landQuality 0
+Žlutí money -44632.0
+Žlutí horse false false 4800$
+Žlutí tank false false 3200$
+Žlutí rig false false 10000$
+Žlutí silo false false 4000$
+Žlutí search false false 4800$
+Žlutí pipe false false 3000$
+Žlutí searchBonus 9
+Žlutí landQuality 9
 Žlutí onColor 252 225 34
 Žlutí offColor 255 247 153
-Zelení money 0.0
-Zelení horse false false 8000$
-Zelení tank false false 8000$
-Zelení rig false false 15000$
-Zelení silo false false 8000$
-Zelení search false false 8000$
-Zelení pipe false false 8000$
-Zelení searchBonus 0
-Zelení landQuality 0
+Zelení money 15142.0
+Zelení horse true true MAX
+Zelení tank false false 3200$
+Zelení rig true true MAX
+Zelení silo true false 6000$
+Zelení search true false 7200$
+Zelení pipe true false 4500$
+Zelení searchBonus 9
+Zelení landQuality 9
 Zelení onColor 46 177 53
 Zelení offColor 196 223 155
-Modří money 0.0
-Modří horse false false 8000$
-Modří tank false false 8000$
-Modří rig false false 15000$
-Modří silo false false 8000$
-Modří search false false 8000$
-Modří pipe false false 8000$
-Modří searchBonus 0
-Modří landQuality 0
+Modří money 14991.0
+Modří horse true true MAX
+Modří tank true true MAX
+Modří rig true true MAX
+Modří silo true true MAX
+Modří search true true MAX
+Modří pipe false false 3000$
+Modří searchBonus 6
+Modří landQuality 18
 Modří onColor 0 57 166
 Modří offColor 141 201 232

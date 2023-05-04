@@ -5,7 +5,23 @@ Start /wait Test.exe
 
 cd ../../../
 
-set /A loops=2
+::cls
+::echo Press any key to start save editor...
+::pause>nul
+::cls
+::cd python/
+::python3 save-updater.py
+::cd ../
+
+::cls
+::echo Press any key to start save editor...
+::pause>nul
+::cls
+::cd python/
+::python3 save-updater.py
+::cd ../
+
+set /A loops=10
 
 for /l %%x in (1, 1, %loops%) do (
 :: One year loop from Mining to Auction

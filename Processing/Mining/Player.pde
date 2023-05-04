@@ -34,7 +34,7 @@ class Player {
   boolean pipe, pipe2;
   String pipePrice = "200$";
 
-  float priceIncrement = 2;
+  float priceIncrement = 1.5;
   boolean changedStat = false;
 
   PImage horseImage, rigImage, tankImage, siloImage, pipeImage, stopWatch, stopWatchBack;
@@ -156,7 +156,7 @@ class Player {
 
     if (tank2)
       sellCap = 30;
-    else if (silo)
+    else if (tank)
       sellCap = 20;
     else
       sellCap = 15;
