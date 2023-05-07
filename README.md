@@ -23,8 +23,8 @@ Budete hledat a těžit ropu. Pokud znáte hru Turmoil, pochopili jste 90 % mech
 # Fáze hry
 
 V každém kole proběhne těchto pět kroků v tomto pořadí:
-1. **Nákup pozemku** - na začátku kola si na velké mapě koupíte pozemek, kde budete hledat. Týmy se mohou přehazovat, pokud mají zájem o stejný pozemek.
-2. **Upgrady, vážení, upgrady!** - za vydělané peníze si můžete koupit upgrady, abyste získali výhodu oproti ostatním.
+1. **Nákup pozemku** - na začátku kola si na velké mapě koupíte pozemek, kde budete hledat. Týmy se mohou přehazovat, pokud mají zájem o stejný pozemek. Na konci této části se rozdají úlohy podle kvality zakoupených pozemků.
+2. **Upgrady, vážení, upgrady!** - za vydělané peníze si můžete koupit upgrady, abyste získali výhodu oproti ostatním. V této fázi se rozdají bonusové úlohy za upgrade "hledání", pokud si koupíte upgrade "hledání" v této části, aplikuje se i na současné kolo.
 3. **Dražba parcely (ve městě)** - Každé kolo se vydraží jedno (nebo více) z políček na malé mapě (těch za které dostáváte body). Vítěz každé jedné dražby může být jen jeden. Může se také vydražit ***žolík*** za který si lze vybrat libovolná z volných parcel ve městě.
 4. **Upgrady, vážení, upgrady!** - Ti co nevyhráli dražbu mohou zamáčknout slzu nákupem upgradů (i ti co vyhráli, pokud jim zbývají peníze).
 5. **Herní kolo** - dělí se na *hledací část* a *těžební část*.
@@ -34,17 +34,16 @@ Nákup pozemku probíhá tak, že si tým řekne o jaký pozemek má zájem. Po�
 
 
 ## Upgrady, vážení, upgrady!
-Upgrady lze koupit za peníze a poskytují výhody do herního kola. Po nákupu prvního stupně upgradu se jeho cena zvýší na dvojnásobek.
-Cena většiny upgradů začíná na 8 000$. Cena upgradu věže začíná na 15 000$.
+Upgrady lze koupit za peníze a poskytují výhody do herního kola. Po nákupu prvního stupně upgradu se jeho cena zvýší o 50 %.
 
 - **Kůň** - rychlejší kůň zkracuje trvání prodeje ropy (doba cesty 10/7/5 dní)
 - **Cisterna** - vůz s větší cisternou uveze najednou větší množství ropy (kapacita 15/20/30 barelů)
-- **Silo** -  větší silo umožňuje skladovat více ropy na prodej (kapacita 150/200/250 barelů)
-- **Těžební věž** - vylepšení těžební věže zvyšuje rychlost těžby ropy
-- **Trubky** - lepší trubky snižují interval dodávek ropy z věží do sila (interval 7/4/1 sekund)
-- **Hledání** - zlepšuje vaše hledací schopnosti více úlohami v kole
+- **Silo** -  větší silo umožňuje skladovat více ropy na prodej (kapacita 60/100/200 barelů)
+- **Těžební věž** - vylepšení těžební věže zvyšuje rychlost těžby ropy (v různém poměru ovlivňuje všechny zdroje ropy)
+- **Trubky** - lepší trubky snižují interval dodávek ropy z věží do sila (interval 12/5/1 sekund)
+- **Hledání** - zlepšuje vaše hledací schopnosti více úlohami v kole (+2 úlohy navíc za level upgradu)
 ## Herní kolo
-Jedno herní kolo trvá 1 herní rok (ten má stejně dnů jako reálný, včetně přestupných let). Dělí se na hledací a těžební část. Každá polovina týmu hraje jinou část, mezi koly se poloviny střídají v herních částech. *(tzn. jedna polovina nejdříve odehraje hledací část a v následujícím kole hraje těžební část s tím, co v minulém kole vyhledala)* 
+Jedno herní kolo trvá 1 herní rok (ten má stejně dnů jako reálný, včetně přestupných let... ano opravdu se s tím někdo kódil). Dělí se na hledací a těžební část. Každá polovina týmu hraje jinou část, mezi koly se poloviny střídají v herních částech. *(tzn. jedna polovina nejdříve odehraje hledací část a v následujícím kole hraje těžební část s tím, co v minulém kole vyhledala)* 
 
 ### Hledací část
 V hledací části polovina týmu hledá ropu na zakoupeném pozemku. Hledání probíhá řešením matematických úloh, na odevzdání každé úlohy máte **právě jeden pokus**. Úloh dostanete tolik, jaká je kvalita vámi zakoupeného pozemku **+2** za každý upgrade **hledání**. Počet správně vyřešených úloh (zásadně) ovlivňuje kolik v těžební části vytěžíte ropy.
