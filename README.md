@@ -54,7 +54,7 @@ Cena ropy se mění v čase pomocí matematické funkce. **Prodej ropy dočasně
 
 
 
-![MiningScreenshot](/screenshots/MiningScreenExplained.png)
+![MiningScreenshot](screenshots/MiningScreenExplained.png)
 
 ## Aukce
 Hráči dostávají možnost získat v aukci jednu z parcel ve městě. Aukce probíhá formou holandské aukce, tedy cena se postupně snižuje do doby, než některý z týmů stiskne tlačítko. Cena za parcelu je cena na obrazovce ve chvíli stisknutí tlačítka.
