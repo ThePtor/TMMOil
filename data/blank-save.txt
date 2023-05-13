@@ -1,48 +1,48 @@
 year 0
-Červení money 2000
+Červení money 4000
 Červení horse false false 4800$
 Červení tank false false 3200$
-Červení rig false false 10000$
+Červení rig false false 18000$
 Červení silo false false 4000$
 Červení search false false 4800$
 Červení pipe false false 3000$
 Červení searchBonus 0
 Červení onColor 204 9 47
 Červení offColor 253 177 192
-Oranžoví money 2000
+Oranžoví money 4000
 Oranžoví horse false false 4800$
 Oranžoví tank false false 3200$
-Oranžoví rig false false 10000$
+Oranžoví rig false false 18000$
 Oranžoví silo false false 4000$
 Oranžoví search false false 4800$
 Oranžoví pipe false false 3000$
 Oranžoví searchBonus 0
 Oranžoví onColor 255 100 24
 Oranžoví offColor 253 198 137
-Žlutí money 2000
+Žlutí money 4000
 Žlutí horse false false 4800$
 Žlutí tank false false 3200$
-Žlutí rig false false 10000$
+Žlutí rig false false 18000$
 Žlutí silo false false 4000$
 Žlutí search false false 4800$
 Žlutí pipe false false 3000$
 Žlutí searchBonus 0
 Žlutí onColor 252 225 34
 Žlutí offColor 255 247 153
-Zelení money 2000
+Zelení money 4000
 Zelení horse false false 4800$
 Zelení tank false false 3200$
-Zelení rig false false 10000$
+Zelení rig false false 18000$
 Zelení silo false false 4000$
 Zelení search false false 4800$
 Zelení pipe false false 3000$
 Zelení searchBonus 0
 Zelení onColor 46 177 53
 Zelení offColor 196 223 155
-Modří money 2000
+Modří money 4000
 Modří horse false false 4800$
 Modří tank false false 3200$
-Modří rig false false 10000$
+Modří rig false false 18000$
 Modří silo false false 4000$
 Modří search false false 4800$
 Modří pipe false false 3000$

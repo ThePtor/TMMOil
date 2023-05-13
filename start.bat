@@ -5,21 +5,21 @@ Start /wait Test.exe
 
 cd ../../../
 
-::cls
-::echo Press any key to start save editor...
-::pause>nul
-::cls
-::cd python/
-::python3 save-updater.py
-::cd ../
+cls
+echo Press any key to start save editor...
+pause>nul
+cls
+cd python/
+python3 save-updater.py
+cd ../
 
-::cls
-::echo Press any key to start save editor...
-::pause>nul
-::cls
-::cd python/
-::python3 save-updater.py
-::cd ../
+cls
+echo Press any key to start save editor...
+pause>nul
+cls
+cd python/
+python3 save-updater.py
+cd ../
 
 set /A loops=10
 

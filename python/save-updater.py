@@ -6,7 +6,7 @@ with open("dataPath.txt") as data_file:
 #save.txt
 #map.txt
 #color-values.txt - optional
-baseprice = 1000 #Základní cena pozemku
+baseprice = 2000 #Základní cena pozemku
 baseincrease = 500 #zvýšení ceny při přihození
 
 class Team:
